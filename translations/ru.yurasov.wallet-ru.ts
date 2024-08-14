@@ -271,7 +271,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="301"/>
         <source>Choose &quot;Add code&quot; from the menu.</source>
-        <translation>Выберите добавить код из меню.</translation>
+        <translation>Выберите добавить карту из меню.</translation>
     </message>
 </context>
 <context>

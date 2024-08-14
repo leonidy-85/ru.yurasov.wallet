@@ -29,9 +29,19 @@
         <translation>Леонид Юрасов </translation>
     </message>
     <message>
+        <location filename="../qml/pages/About.qml" line="73"/>
+        <source>Wallet is open source software licensed under the terms of the GNU General Public License.</source>
+        <translation>Кошелек это программное обеспечение с открытым исходным кодом, лицензированное в соответствии с условиями GNU General Public License.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="82"/>
+        <source>For suggestions, bugs and ideas visit </source>
+        <translation>Для предложений, сообщений об ошибках или идей посетите</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/About.qml" line="99"/>
         <source>Using </source>
-        <translation>Использует в качстве бэкэнда </translation>
+        <translation>Использует в качестве бэкэнда </translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="99"/>
@@ -72,24 +82,29 @@
         <translation>Поле номер карты не может быть пустым! </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="79"/>
-        <source>Barcode type</source>
-        <translation>Тип</translation>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="60"/>
+        <source>Add card</source>
+        <translation>Добавить карту</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="93"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="88"/>
+        <source>Barcode type</source>
+        <translation>Тип кода</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="102"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="119"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="128"/>
         <source>Code</source>
         <translation>Номер карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="131"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="145"/>
         <source>Save</source>
-        <translation>Сохранить</translation>
+        <translation>Добавить</translation>
     </message>
 </context>
 <context>
@@ -112,7 +127,7 @@
     <message>
         <location filename="../qml/components/AppBarMenu.qml" line="54"/>
         <source>Add code</source>
-        <translation>Добавить штрих-код</translation>
+        <translation>Добавить карту</translation>
     </message>
 </context>
 <context>
@@ -129,15 +144,23 @@
     </message>
 </context>
 <context>
+    <name>CoverPage</name>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="25"/>
+        <source>Wallet</source>
+        <translation>Кошелёк</translation>
+    </message>
+</context>
+<context>
     <name>EditBarcodePage</name>
     <message>
         <location filename="../qml/pages/EditBarcodePage.qml" line="98"/>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="287"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="284"/>
         <source>Update</source>
-        <translation>Обновить штрих-код</translation>
+        <translation>Обновить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="173"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="172"/>
         <source>Barcode type</source>
         <translation>Тип штрих-кода</translation>
     </message>
@@ -152,42 +175,42 @@
         <translation>Изображение не может быть более 650x400. Загруженное изображение </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="161"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="160"/>
         <source>Update barcode</source>
-        <translation>Обновить штрих-код</translation>
+        <translation>Обновить данные карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="186"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="185"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="203"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="202"/>
         <source>Code</source>
         <translation>Номер карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="228"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="227"/>
         <source>Remove icon</source>
         <translation>Удалить лого</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="249"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="248"/>
         <source>Filename</source>
-        <translation type="unfinished">Имя файла</translation>
+        <translation>Имя файла</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="257"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="256"/>
         <source>File to import</source>
         <translation>Файл для загрузки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="258"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="257"/>
         <source>None</source>
         <translation> не выбран  </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="274"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="270"/>
         <source>Here you can download the logo from the file, but not more than 650x400</source>
         <translation>Здесь вы можете загрузить логотип из файла, но не больше чем 650x400</translation>
     </message>
@@ -213,7 +236,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="131"/>
         <source> from favorites</source>
-        <translation> добавить в избранное</translation>
+        <translation>  из избранного</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="183"/>
@@ -274,14 +297,14 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="65"/>
         <location filename="../qml/pages/Settings.qml" line="96"/>
-        <location filename="../qml/pages/Settings.qml" line="169"/>
+        <location filename="../qml/pages/Settings.qml" line="170"/>
         <source>Import</source>
         <translation>Импорт</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="65"/>
         <location filename="../qml/pages/Settings.qml" line="96"/>
-        <location filename="../qml/pages/Settings.qml" line="169"/>
+        <location filename="../qml/pages/Settings.qml" line="170"/>
         <source>Export</source>
         <translation>Экспорт</translation>
     </message>
@@ -306,17 +329,17 @@
         <translation>Перезаписать существующий</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="190"/>
+        <location filename="../qml/pages/Settings.qml" line="191"/>
         <source>Error writing to file </source>
         <translation>Ошибка записи в файл</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="192"/>
+        <location filename="../qml/pages/Settings.qml" line="193"/>
         <source>Discont card Database exported to </source>
         <translation>База данных дисконтных карт экспортирована </translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="195"/>
+        <location filename="../qml/pages/Settings.qml" line="196"/>
         <source>Could not read Discont card from Database</source>
         <translation>Не удалось прочитать дисконтную карту из базы данных</translation>
     </message>
@@ -331,12 +354,12 @@
         <translation>Здесь вы можете экспортировать штрих-код из файла</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="205"/>
+        <location filename="../qml/pages/Settings.qml" line="206"/>
         <source>Discont card Database imported from </source>
         <translation>База данных дисконтных карт импортирована из </translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="211"/>
+        <location filename="../qml/pages/Settings.qml" line="212"/>
         <source>Could not read from file </source>
         <translation> Не удалось прочитать файл.</translation>
     </message>

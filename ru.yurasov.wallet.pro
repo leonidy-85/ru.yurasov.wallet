@@ -1,5 +1,3 @@
-
-# The name of your application
 TARGET = ru.yurasov.wallet
 
 CONFIG += auroraapp
@@ -18,7 +16,6 @@ HEADERS += \
     src/osread.h \
     src/settings.h
 
-#DEPLOYMENT_PATH = /usr/share/$${TARGET}
 
 DISTFILES += qml/wallet.qml \
     qml/cover/CoverPage.qml \
@@ -40,8 +37,6 @@ DISTFILES += qml/wallet.qml \
     qml/icons/barcode-icon-black.png \
     qml/icons/datamatrix-icon-black.png \
     qml/icons/qrcode-icon-black.png \
-    qml/icons/list_b.svg \
-    qml/icons/grid_b.svg \
     qml/icons/shablon.png \
     qml/icons/shablon.svg \
     qml/cover/cover_background.png \
@@ -51,16 +46,14 @@ DISTFILES += qml/wallet.qml \
 
 AURORAAPP_ICONS = 86x86 108x108 128x128 172x172
 
-
-#INSTALLS += translations
-
 TRANSLATIONS = translations/ru.yurasov.wallet-ru.ts
 
 
-isEmpty(VERSION) {
-    VERSION = $$system( egrep "^Version:\|^Release:" rpm/ru.yurasov.wallet.spec |tr -d "[A-Z][a-z]: " | tr "\\\n" "-" | sed "s/\.$//g"| tr -d "[:space:]")
-    message("VERSION is unset, assuming $$VERSION")
-}
+
+VERSION = $$system( egrep "^Version:\|^Release:" rpm/ru.yurasov.wallet.spec |tr -d "[A-Z][a-z]: " | tr "\\\n" "-" | sed "s/\.$//g"| tr -d "[:space:]")
+
+#VERSION= 1.3-4
+
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += BUILD_YEAR=$$system(date '+%Y')
 

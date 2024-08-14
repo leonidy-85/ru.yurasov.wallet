@@ -63,29 +63,29 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
-//            Label {
-//                anchors.horizontalCenter: parent.horizontalCenter
-//                width: parent.width - 2*Theme.horizontalPageMargin
-//                horizontalAlignment: Text.AlignHCenter
-//                wrapMode: Text.Wrap
-//                font.pixelSize: Theme.fontSizeSmall
-//                color: Theme.secondaryColor
-//                text: qsTr("Wallet is open source software licensed under the terms of the GNU General Public License.")
-//            }
-            //            Label {
-            //                anchors.horizontalCenter: parent.horizontalCenter
-            //                width: parent.width - 2*Theme.horizontalPageMargin
-            //                horizontalAlignment: Text.AlignHCenter
-            //                wrapMode: Text.Wrap
-            //                font.pixelSize: Theme.fontSizeSmall
-            //                color: Theme.secondaryColor
-            //                text: qsTr("For suggestions, bugs and ideas visit ")
-            //            }
-            //            Button {
-            //                text: "GitHub"
-            //                anchors.horizontalCenter: parent.horizontalCenter
-            //                onClicked: Qt.openUrlExternally("https://github.com/leonidy-85/ru.yurasov.stocks")
-            //            }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                text: qsTr("Wallet is open source software licensed under the terms of the GNU General Public License.")
+            }
+                        Label {
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            width: parent.width - 2*Theme.horizontalPageMargin
+                            horizontalAlignment: Text.AlignHCenter
+                            wrapMode: Text.Wrap
+                            font.pixelSize: Theme.fontSizeSmall
+                            color: Theme.secondaryColor
+                            text: qsTr("For suggestions, bugs and ideas visit ")
+                        }
+                        Button {
+                            text: "GitHub"
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            onClicked: Qt.openUrlExternally("https://github.com/leonidy-85/ru.yurasov.wallet")
+                        }
             Separator {
                 color: Theme.primaryColor
                 width: parent.width

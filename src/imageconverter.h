@@ -5,7 +5,6 @@
 #include <QImage>
 #include <QBuffer>
 #include <QByteArray>
-#include <QDebug>
 
 class ImageConverter : public QObject {
     Q_OBJECT
@@ -16,7 +15,6 @@ public slots:
     QString imageToBase64(const QString &filePath) {
         QImage image(filePath);
         if (image.isNull()) {
-            qDebug() << "Failed to load image from path:" << filePath;
             return QString();
         }
 
@@ -24,8 +22,6 @@ public slots:
         QBuffer buffer(&byteArray);
         buffer.open(QIODevice::WriteOnly);
         image.save(&buffer, "PNG");
-
-        qDebug() << "Received filePath from QML:" << filePath;
         return byteArray.toBase64();
     }
 

@@ -164,7 +164,8 @@ Page {
       }
       Button {
           id: save
-          width: parent.width
+          width: parent.width * 0.8
+          anchors.horizontalCenter: parent.horizontalCenter
           visible: fileName.text.length > 0 && (mode == "import" ) || checkFileName(fileName.text) ? true : false
           text: mode == "export" ? qsTr("Export") : qsTr("Import")
           onClicked: {

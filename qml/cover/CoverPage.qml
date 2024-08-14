@@ -22,7 +22,7 @@ CoverBackground {
 
     Label {
         id: coverHeader
-        text: "Wallet"
+        text: qsTr("Wallet")
         width: parent.width
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top

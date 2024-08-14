@@ -55,13 +55,20 @@ Dialog {
         mainapp.barcodesChanged = true
     }
 
+   PageHeader {
+       objectName: "pageHeader"
+       title: qsTr("Add card")
+   }
+
 
     SilicaFlickable {
         anchors.fill: parent
         contentWidth: parent.width
-        contentHeight: col.height
-
+//        contentHeight: col.height
+        anchors.topMargin: 90
         clip: true
+
+
 
         ScrollDecorator {}
 
@@ -76,6 +83,8 @@ Dialog {
 
             ComboBox {
                 id: barcodetype
+//                anchors.top: col.bottom
+                anchors.topMargin: 40
                 label: qsTr("Barcode type")
                 menu: ContextMenu {
                     Repeater {
@@ -120,14 +129,19 @@ Dialog {
                 label: placeholderText
                 width: parent.width
                 EnterKey.onClicked: accept()
-            }
+              }
 
+            Separator {
+                color: Theme.primaryColor
+                width: parent.width
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Qt.AlignHCenter
+            }
 
                 Button {
                     id: saveButton
-                    anchors.right: parent.right
-                    anchors.left: parent.left
-                    width: parent.width
+                    width: parent.width * 0.8
+                    anchors.horizontalCenter: parent.horizontalCenter
                     text: qsTr("Save")
                     onClicked: saveCard()
                  }

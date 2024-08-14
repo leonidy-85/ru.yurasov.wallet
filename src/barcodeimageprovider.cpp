@@ -1,5 +1,4 @@
 #include "barcodeimageprovider.h"
-#include <QDebug>
 
 BarcodeImageProvider::BarcodeImageProvider()
     : QQuickImageProvider(QQuickImageProvider::Pixmap) // Указываем тип предоставляемого изображения
@@ -34,21 +33,8 @@ QPixmap BarcodeImageProvider::requestPixmap(const QString &id, QSize *size, cons
         return empty;
     // Настраиваем параметры штрих-кода
     if (type == "20") {
-       // symbol->symbology = BARCODE_CODE128;
         symbol->input_mode = UNICODE_MODE;
     }
-
-//    else if (type == "qr") {
-//        symbol->symbology = BARCODE_QRCODE;
-//    }
-//    else if (type == "aztec") {
-//        symbol->symbology = BARCODE_AZTEC;
-//    }
-//    else if (type == "pdf417") {
-//        symbol->symbology = BARCODE_PDF417;
-//    }
-//    else if (type == "ean13") {
-//        symbol->symbology = BARCODE_EANX;
 
     if (type == "" || type == NULL) {
         ZBarcode_Delete(symbol);

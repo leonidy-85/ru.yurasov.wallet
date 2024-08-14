@@ -155,7 +155,6 @@ Page {
             spacing: 10
             width: parent.width
 
-
             PageHeader {
                 objectName: "pageHeader"
                 title: qsTr("Update barcode")
@@ -261,16 +260,13 @@ Page {
 
             Text {
                 id: importIcon
-
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottomMargin: 20
                 width: parent.width - 2*Theme.paddingLarge
-
                 wrapMode: Text.Wrap
                 maximumLineCount: 15
                 font.pixelSize: Theme.fontSizeTiny
                 color: Theme.secondaryColor
-
                 text: qsTr("Here you can download the logo from the file, but not more than 650x400")
             }
 
@@ -283,17 +279,15 @@ Page {
 
             Button {
                 id: save
-                width: parent.width
+                width: parent.width * 0.8
+                anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Update")
                 onClicked: {
-
                     sendData(barcode_id,
                              name.text.trim(),
                              barcodetype.currentItem.text,
                              '',
                              code.text.trim())
-
-
                 }
             }
         }

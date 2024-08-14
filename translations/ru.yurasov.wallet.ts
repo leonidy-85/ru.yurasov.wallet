@@ -29,6 +29,16 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qml/pages/About.qml" line="73"/>
+        <source>Wallet is open source software licensed under the terms of the GNU General Public License.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="82"/>
+        <source>For suggestions, bugs and ideas visit </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/About.qml" line="99"/>
         <source>Using </source>
         <translation type="unfinished"></translation>
@@ -72,22 +82,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="79"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="60"/>
+        <source>Add card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="88"/>
         <source>Barcode type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="93"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="102"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="119"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="128"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="131"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="145"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
@@ -129,15 +144,23 @@
     </message>
 </context>
 <context>
+    <name>CoverPage</name>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="25"/>
+        <source>Wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>EditBarcodePage</name>
     <message>
         <location filename="../qml/pages/EditBarcodePage.qml" line="98"/>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="287"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="284"/>
         <source>Update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="173"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="172"/>
         <source>Barcode type</source>
         <translation type="unfinished"></translation>
     </message>
@@ -152,42 +175,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="161"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="160"/>
         <source>Update barcode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="186"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="185"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="203"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="202"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="228"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="227"/>
         <source>Remove icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="249"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="248"/>
         <source>Filename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="257"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="256"/>
         <source>File to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="258"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="257"/>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="274"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="270"/>
         <source>Here you can download the logo from the file, but not more than 650x400</source>
         <translation type="unfinished"></translation>
     </message>
@@ -274,14 +297,14 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="65"/>
         <location filename="../qml/pages/Settings.qml" line="96"/>
-        <location filename="../qml/pages/Settings.qml" line="169"/>
+        <location filename="../qml/pages/Settings.qml" line="170"/>
         <source>Import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="65"/>
         <location filename="../qml/pages/Settings.qml" line="96"/>
-        <location filename="../qml/pages/Settings.qml" line="169"/>
+        <location filename="../qml/pages/Settings.qml" line="170"/>
         <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
@@ -306,17 +329,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="190"/>
+        <location filename="../qml/pages/Settings.qml" line="191"/>
         <source>Error writing to file </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="192"/>
+        <location filename="../qml/pages/Settings.qml" line="193"/>
         <source>Discont card Database exported to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="195"/>
+        <location filename="../qml/pages/Settings.qml" line="196"/>
         <source>Could not read Discont card from Database</source>
         <translation type="unfinished"></translation>
     </message>
@@ -331,12 +354,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="205"/>
+        <location filename="../qml/pages/Settings.qml" line="206"/>
         <source>Discont card Database imported from </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="211"/>
+        <location filename="../qml/pages/Settings.qml" line="212"/>
         <source>Could not read from file </source>
         <translation type="unfinished"></translation>
     </message>

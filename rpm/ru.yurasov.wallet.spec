@@ -1,27 +1,24 @@
-Name:       ru.yurasov.wallet
+# >> macros
+# << macros
 
+
+Name:       ru.yurasov.wallet
 Summary:    Your Barcode Manager for discount card
 Version:    1.1
-Release:    5
+Release:    6
 Group:      Qt/Qt
-License:    MIT
+License:    GPL
 URL:        https://github.com/leonidy-85/wallet
 Source0:    %{name}.%{version}.tar.bz2
 
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   qr-filter-qml-plugin
-Requires:   qt5-qtdeclarative-import-sensors
-Requires:   qt5-qtdeclarative-import-positioning
-Requires(post): /bin/touch
 Requires(post): %{_bindir}/gtk-update-icon-cache
 BuildRequires:  libpng
-BuildRequires:  qt5-qtdeclarative-import-sensors
-BuildRequires:  qt5-qtdeclarative-import-positioning
-BuildRequires:  qt5-qtpositioning-devel
 BuildRequires:  desktop-file-utils
 
 %description
-Wallet for (bar)codes using zint as backend
+Your Barcode Manager for discount card, using zint as backend for (bar)codes
 
 %prep
 %setup -q -n %{name}-%{version}

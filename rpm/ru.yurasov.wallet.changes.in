@@ -19,17 +19,19 @@
 #- Saturday - Sat
 #- Sunday - Sun
 #
+* Wed August 14 2024 Yurasov Leonid 1.1-6
+- fix GUI, fix text
 
-* Mon August 14 2024 Yurasov Leonid 1.1-5
+* Wed August 14 2024 Yurasov Leonid 1.1-5
 - fix GUI, automatically detect barcode type
 
-* Sun August 13 2024 Yurasov Leonid 1.1-4
+* Tue August 13 2024 Yurasov Leonid 1.1-4
 - Add load image to card
 
-* Sat August 12 2024 Yurasov Leonid 1.1-3
+* Mon August 12 2024 Yurasov Leonid 1.1-3
 - Add Favorits
 
-* Fri August 11 2024 Yurasov Leonid 1.1-2
+* Sun August 11 2024 Yurasov Leonid 1.1-2
 - Add export\import
 
 * Thu August 08 2024 Yurasov Leonid 1.0-1

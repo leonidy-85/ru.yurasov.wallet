@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.yurasov.wallet
+Exec=ru.yurasov.wallet
+Name=Wallet
+Name[ru]=Кошелек
+
+[X-Application]
+Permissions=Pictures;Camera;Internet;UserDirs
+OrganizationName=ru.yurasov
+ApplicationName=wallet
+ExecDBus=/usr/bin/ru.yurasov.wallet  --dbus-launch
+
+[X-Aurora-Application]
+IconMode=Crop

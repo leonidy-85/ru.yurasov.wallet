@@ -1,0 +1,36 @@
+# Rename this file as ru.yurasov.wallet.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+#
+# Alternatively, if your changelog is automatically generated (e.g. with
+# the git-change-log command provided with Sailfish OS SDK), create a
+# ru.yurasov.wallet.changes.run script to let mb2 run the required commands for you.
+
+# * date Author's Name <author's email> version-release
+# - Summary of changes
+#- Monday - Mon
+#- Tuesday - Tue
+#- Wednesday - Wed
+#- Thursday - Thu
+#- Friday - Fri
+#- Saturday - Sat
+#- Sunday - Sun
+#
+
+* Mon August 14 2024 Yurasov Leonid 1.1-5
+- fix GUI, automatically detect barcode type
+
+* Sun August 13 2024 Yurasov Leonid 1.1-4
+- Add load image to card
+
+* Sat August 12 2024 Yurasov Leonid 1.1-3
+- Add Favorits
+
+* Fri August 11 2024 Yurasov Leonid 1.1-2
+- Add export\import
+
+* Thu August 08 2024 Yurasov Leonid 1.0-1
+- first realease

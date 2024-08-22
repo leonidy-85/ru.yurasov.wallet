@@ -7,6 +7,7 @@ ApplicationWindow {
     property bool groupsChanged: false
     property bool barcodesChanged: false
     property bool barcodeDisplayed: false
+    property bool search: false
 
     property bool barcodeUpdate: false
 

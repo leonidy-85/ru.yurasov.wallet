@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Aurora.Controls 1.0
-
+import "../db.js" as DB
 
     AppBar {
         id: topAppBar
@@ -13,23 +13,27 @@ import Aurora.Controls 1.0
         visible: opacity > 0
         Behavior on opacity { FadeAnimation {} }
 
-
                AppBarSpacer {}
 
-//               IconButton {
-//                   icon.source: "../icons/grid_b.svg" + (pressed
-//                                ? Theme.highlightColor
-//                                : Theme.primaryColor)
-//                   height: 64
-//                   onClicked: mainapp.view=1
-//               }
-//             IconButton {
-//                   icon.source: "../icons/list_b.svg" + (pressed
-//                                ? Theme.highlightColor
-//                                : Theme.primaryColor)
-//                   height: 76
-//                   onClicked: mainapp.view=0
-//               }
+               IconButton {
+                   icon.source: "image://theme/icon-m-search?" + (pressed
+                                ? Theme.highlightColor
+                                : Theme.primaryColor)
+                   icon.width: 50
+                   icon.height: 50
+                   onClicked: {
+                       if( mainapp.search===true){
+                            mainapp.search=false
+                            searchField.text = ""
+                            barcodeList.model.clear()
+                            DB.readBarcodes(mainapp.searchTerm)
+                       }else{
+                            mainapp.search=true
+
+                       }
+                      }
+               }
+
 
                 AppBarButton {
                   id: appBarMenuButton

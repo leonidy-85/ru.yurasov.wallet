@@ -4,17 +4,23 @@ CONFIG += auroraapp
 CONFIG += auroraapp_i18n
 
 LIBS += -lpng
+#LIBS += -lz
+#LIBS += -lbz2
+#LIBS += -llzma
+
+#QT += network
+#QT += sql
+#QT += positioning
+#QT += dbus
 
 SOURCES += src/wallet.cpp \
-    src/barcodeimageprovider.cpp \
-    src/osread.cpp \
-    src/settings.cpp
+    src/barcodeimageprovider.cpp
 
 HEADERS += \
     src/barcodeimageprovider.h \
-    src/imageconverter.h \
-    src/osread.h \
-    src/settings.h
+    src/imageconverter.h
+#    src/zipfile.h \
+#    src/zipfileimageprovider.h
 
 
 DISTFILES += qml/wallet.qml \
@@ -24,6 +30,7 @@ DISTFILES += qml/wallet.qml \
     qml/pages/BarcodeDisplayPage.qml \
     qml/pages/MainPage.qml \
     qml/pages/ScanBarcodePage.qml \
+    qml/pages/ViewPkpassPage.qml \
     qml/pagesEditBarcodeGroupPage.qml \
     qml/pages/EditBarcodePage.qml \
     qml/components/FancyPageHeader.qml \
@@ -48,11 +55,11 @@ AURORAAPP_ICONS = 86x86 108x108 128x128 172x172
 
 TRANSLATIONS = translations/ru.yurasov.wallet-ru.ts
 
+DISTFILES += \
+    qml/currencies.json
 
 
 VERSION = $$system( egrep "^Version:\|^Release:" rpm/ru.yurasov.wallet.spec |tr -d "[A-Z][a-z]: " | tr "\\\n" "-" | sed "s/\.$//g"| tr -d "[:space:]")
-
-#VERSION= 1.3-4
 
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += BUILD_YEAR=$$system(date '+%Y')

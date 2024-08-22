@@ -4,57 +4,57 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="29"/>
+        <location filename="../qml/pages/About.qml" line="28"/>
         <source>Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="38"/>
+        <location filename="../qml/pages/About.qml" line="37"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="43"/>
+        <location filename="../qml/pages/About.qml" line="42"/>
         <source>Your wallet for all your scannable codes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="58"/>
+        <location filename="../qml/pages/About.qml" line="57"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="62"/>
-        <source>© Leonid Yurasov</source>
+        <location filename="../qml/pages/About.qml" line="61"/>
+        <source>© Leonid Yurasov </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="73"/>
+        <location filename="../qml/pages/About.qml" line="72"/>
         <source>Wallet is open source software licensed under the terms of the GNU General Public License.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="82"/>
+        <location filename="../qml/pages/About.qml" line="81"/>
         <source>For suggestions, bugs and ideas visit </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="99"/>
+        <location filename="../qml/pages/About.qml" line="98"/>
         <source>Using </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="99"/>
+        <location filename="../qml/pages/About.qml" line="98"/>
         <source> as backend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="112"/>
+        <location filename="../qml/pages/About.qml" line="111"/>
         <source>Based on </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="121"/>
+        <location filename="../qml/pages/About.qml" line="120"/>
         <source>Thanks to Arno Dekker for the idea and inspiration</source>
         <translation type="unfinished"></translation>
     </message>
@@ -115,17 +115,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/AppBarMenu.qml" line="43"/>
+        <location filename="../qml/components/AppBarMenu.qml" line="47"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/AppBarMenu.qml" line="48"/>
+        <location filename="../qml/components/AppBarMenu.qml" line="52"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/AppBarMenu.qml" line="54"/>
+        <location filename="../qml/components/AppBarMenu.qml" line="58"/>
         <source>Add code</source>
         <translation type="unfinished"></translation>
     </message>
@@ -223,53 +223,63 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="77"/>
+        <location filename="../qml/pages/MainPage.qml" line="80"/>
+        <source>Search...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="94"/>
         <source>Favorits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="131"/>
-        <location filename="../qml/pages/MainPage.qml" line="286"/>
+        <location filename="../qml/pages/MainPage.qml" line="177"/>
+        <location filename="../qml/pages/MainPage.qml" line="371"/>
         <source>Remove </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="131"/>
+        <location filename="../qml/pages/MainPage.qml" line="177"/>
         <source> from favorites</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="183"/>
+        <location filename="../qml/pages/MainPage.qml" line="230"/>
         <source>All cards</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="262"/>
+        <location filename="../qml/pages/MainPage.qml" line="347"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="281"/>
+        <location filename="../qml/pages/MainPage.qml" line="366"/>
         <source>Add </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="281"/>
+        <location filename="../qml/pages/MainPage.qml" line="366"/>
         <source> to favorites</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="287"/>
+        <location filename="../qml/pages/MainPage.qml" line="372"/>
         <source>Deleting </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="300"/>
+        <location filename="../qml/pages/MainPage.qml" line="385"/>
         <source>No barcodes defined</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="301"/>
+        <location filename="../qml/pages/MainPage.qml" line="385"/>
+        <source>No card with this name found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="386"/>
         <source>Choose &quot;Add code&quot; from the menu.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -277,7 +287,7 @@
 <context>
     <name>ScanBarcodePage</name>
     <message>
-        <location filename="../qml/pages/ScanBarcodePage.qml" line="45"/>
+        <location filename="../qml/pages/ScanBarcodePage.qml" line="69"/>
         <source>Manual input</source>
         <translation type="unfinished"></translation>
     </message>
@@ -361,6 +371,14 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="212"/>
         <source>Could not read from file </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ViewPkpassPage</name>
+    <message>
+        <location filename="../qml/pages/ViewPkpassPage.qml" line="24"/>
+        <source>Fullscreen Barcode</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

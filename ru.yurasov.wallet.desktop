@@ -5,6 +5,7 @@ Icon=ru.yurasov.wallet
 Exec=ru.yurasov.wallet
 Name=Wallet
 Name[ru]=Кошелек
+MimeType=application/vnd.apple.pkpass
 
 [X-Application]
 Permissions=Pictures;Camera;Internet;UserDirs

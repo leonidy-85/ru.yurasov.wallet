@@ -1,14 +1,13 @@
 import QtQuick 2.5
 import Sailfish.Silica 1.0
-import ru.yurasov.wallet.Launcher 1.0
 
 Page {
     id: aboutPage
     property bool largeScreen: Screen.width > 540
 
-    App {
-        id: bar
-    }
+//    App {
+//        id: bar
+//    }
 
     SilicaFlickable {
         anchors.fill: parent
@@ -59,7 +58,7 @@ Page {
             }
 
             Label {
-                text: qsTr("© Leonid Yurasov") + buildyear
+                text: qsTr("© Leonid Yurasov ") +" "+ buildyear
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 

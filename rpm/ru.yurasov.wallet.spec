@@ -5,7 +5,7 @@
 Name:       ru.yurasov.wallet
 Summary:    Your Barcode Manager for discount card
 Version:    1.1
-Release:    6
+Release:    12
 Group:      Qt/Qt
 License:    GPL
 URL:        https://github.com/leonidy-85/wallet
@@ -13,8 +13,11 @@ Source0:    %{name}.%{version}.tar.bz2
 
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   qr-filter-qml-plugin
-Requires(post): %{_bindir}/gtk-update-icon-cache
 BuildRequires:  libpng
+BuildRequires:  desktop-file-utils
+BuildRequires:  pkgconfig(Qt5DBus)
+BuildRequires:  pkgconfig(liblzma)
+#BuildRequires:  bzip2-devel
 BuildRequires:  desktop-file-utils
 
 %description

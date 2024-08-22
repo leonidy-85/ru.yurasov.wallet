@@ -105,27 +105,51 @@ function initZintCodes() {
 /***************************************/
 
 // select barcodes and push them into the barcodelist
-function readBarcodes() {
+function readBarcodes(name) {
   var db = connectDB();
-    var group = 1;
   db.transaction(function (tx) {
-    var result = tx.executeSql(
-      "SELECT \
-           barcode.id, \
-           barcode.Name, \
-           barcode.Type, \
-           barcode.Description, \
-           barcode.Code, \
-           zint_codes.ZintCode, \
-           coalesce(barcode.Icon, '') Icon, \
-           Sel \
-        FROM \
-           barcode \
-           left join \
-              zint_codes \
-              on barcode.Type = zint_codes.Description \
-        ORDER BY \
-           barcode.Name COLLATE NOCASE");
+      var result
+      if(name==='' || name==='%%' || name === undefined){
+           result = tx.executeSql(
+            "SELECT \
+                 barcode.id, \
+                 barcode.Name, \
+                 barcode.Type, \
+                 barcode.Description, \
+                 barcode.Code, \
+                 zint_codes.ZintCode, \
+                 coalesce(barcode.Icon, '') Icon, \
+                 Sel \
+              FROM \
+                 barcode \
+                 left join \
+                    zint_codes \
+                    on barcode.Type = zint_codes.Description \
+              ORDER BY \
+                 barcode.Name COLLATE NOCASE;")
+      }else{
+           result = tx.executeSql(
+            "SELECT \
+                 barcode.id, \
+                 barcode.Name, \
+                 barcode.Type, \
+                 barcode.Description, \
+                 barcode.Code, \
+                 zint_codes.ZintCode, \
+                 coalesce(barcode.Icon, '') Icon, \
+                 Sel \
+              FROM \
+                 barcode \
+                 left join \
+                    zint_codes \
+                    on barcode.Type = zint_codes.Description \
+                 WHERE Name LIKE  ? \
+              ORDER BY \
+                 barcode.Name COLLATE NOCASE;",[name])
+
+      }
+
+
 
     for (var i = 0; i < result.rows.length; i++) {
       mainPage.appendBarcode(
@@ -213,7 +237,6 @@ function removeBarcode(id) {
 }
 
 
-
 // insert barcode
 function writeBarcode(name, type, description, code, icon, select) {
   var db = connectDB();
@@ -299,7 +322,9 @@ function removeIcon(name) {
 
 
 
-// Get all Values and put them into a JSON-Object
+/***************************************/
+/*** Export data  JSON  ***/
+/***************************************/
 function db2json() {
   var db = connectDB();
   var dataList = [];
@@ -325,7 +350,9 @@ function db2json() {
   }
 }
 
-// Read Values from JSON and put them into the DB
+/***************************************/
+/*** import data JSON  ***/
+/***************************************/
 function json2db(jsonString, error) {
   var select =0 ;
   var json = JSON.parse(jsonString);
@@ -351,7 +378,9 @@ function json2db(jsonString, error) {
   }
 }
 
-
+/***************************************/
+/*** notification   ***/
+/***************************************/
 function banner(notificationType, message) {
     notification.close()
     notification.body = message
@@ -359,7 +388,9 @@ function banner(notificationType, message) {
     notification.publish()
 }
 
-
+/***************************************/
+/*** icon    ***/
+/***************************************/
 function img_src(barcode_icon,zint_code, st) {
     var srcImg
     var status=0
@@ -394,4 +425,44 @@ function img_src(barcode_icon,zint_code, st) {
         }
     }
     return srcImg
+}
+/***************************************/
+/***    detect format baecode        ***/
+/***************************************/
+function detectFormat(code) {
+    if (/^\d{13}$/.test(code)) {
+        return "EAN";
+    }
+    else if (/^[0-9A-Fa-f]{8,}$/.test(code)) {
+        return "QR Code";
+    }
+    else if (/^[ -~]{1,1100}$/.test(code) && code.length >= 3) {
+        return "PDF417";
+    }
+    else if (/^[\x20-\x7E]{1,48}$/.test(code)) {
+        return "Code 128";
+    }
+    else {
+        return "Unknown";
+    }
+}
+
+
+function barcodeSize(origWidth, origHeight, maxWidth, em) {
+    // find the optimal barcode size
+    var width = 0;
+    var height = 0;
+    var scale = 0;
+    // leave 0.5em border, but the barcode should be about 4em high
+    while (width + em <= maxWidth && height < em * 4) {
+        scale++;
+        width = origWidth * scale;
+        height = origHeight * scale;
+    }
+    if (width + em > maxWidth && scale > 1) {
+        scale--;
+        width = origWidth * scale;
+        height = origHeight * scale;
+    }
+    return [width, height];
 }

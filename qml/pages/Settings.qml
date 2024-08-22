@@ -38,7 +38,7 @@ Page {
       if (exportFile.exists(file)) {
         return(true)
       } else {
-        notify.show(qsTr("Given file does not exist!"), 4000);
+         DB.banner(qsTr("Given file does not exist!"));
         return(false)
       }
     }
@@ -206,7 +206,7 @@ Page {
                    DB.banner('OK', qsTr("Discont card Database imported from ")+ fileName.text)
                  pageStack.pop();
             } else {
-              notify.show(errormsg, 4000);
+              DB.banner(errormsg);
             }
         } else {
             DB.banner('Error', qsTr("Could not read from file ")+ fileName.text)

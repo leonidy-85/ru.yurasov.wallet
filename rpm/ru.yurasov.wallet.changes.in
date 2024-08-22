@@ -19,6 +19,21 @@
 #- Saturday - Sat
 #- Sunday - Sun
 #
+* Thu August 22 2024 Yurasov Leonid 1.1-12
+- Fix GUI , add image radius
+
+* Wed August 21 2024 Yurasov Leonid 1.1-11
+- Fix GUI
+
+* Wed August 21 2024 Yurasov Leonid 1.1-10
+- add search cards
+
+* Mon August 19 2024 Yurasov Leonid 1.1-8
+- fix Requires
+
+* Wed August 14 2024 Yurasov Leonid 1.1-7
+- fix GUI, fix text
+
 * Wed August 14 2024 Yurasov Leonid 1.1-6
 - fix GUI, fix text
 

@@ -65,65 +65,111 @@ Page {
     }
 
     Column {
+        id: col_first
         anchors.fill: parent
-        spacing: 5
         anchors.topMargin: 120
 
         SilicaFlickable {
             width: parent.width
-            height: barcodeFavorits.count<4 ? 260 : 450
+            height: barcodeFavorits.count<4 ? 280 : 450
             visible: barcodeFavorits.count>0
+
+
+            TextField {
+                id: searchField
+                placeholderText:qsTr("Search...")
+                focus: mainapp.search ? true : false
+                width: parent.width*0.8
+                visible : mainapp.search
+                onTextChanged: {
+                    barcodeList.model.clear()
+                    barcodeList.anchors.topMargin=150
+                    var searchTerm = "%" + text + "%";
+                    DB.readBarcodes(searchTerm)
+                }
+            }
+
+
             SectionHeader {
                 text: qsTr("Favorits")
-                visible: isPortrait || (largeScreen && Screen.width > 1080)
+                visible : !mainapp.search
+                font.pixelSize: Theme.fontSizeMedium
+                // visible: isPortrait || (largeScreen && Screen.width > 1080)
             }
             SilicaGridView {
                 id: barcodeFavorits
                 cellWidth: width / 3
-//                cellHeight: cellWidth
-                cellHeight: 180
+                cellHeight: 160
                 anchors.fill: parent
                 leftMargin: Theme.horizontalPageMargin
                 rightMargin: Theme.horizontalPageMargin
                 anchors.topMargin: 120
+                anchors.leftMargin: parent.width  * 0.033
                 model: ListModel {}
                 delegate: ListItem {
                     id: gridItem
-                    width: 200
+                    width: parent.width  * 0.3
 
-                    Image {
-                        id: iconImageGrid
-                       // source: img_src(fav_barcode_icon,fav_zint_code)
-                        source: fav_barcode_icon!=="" ? "data:image/png;base64," +fav_barcode_icon : "../icons/shablon.svg"
-//                        source:   "../icons/shablon.svg"
-                        sourceSize: Qt.size(Theme.itemSizeSmall,
-                                            Theme.itemSizeSmall)
-                        height: 140
-                        width: parent.width
-                        anchors.left: parent.left
-                        anchors.leftMargin: 20
-                        anchors.verticalCenter: parent.verticalCenter
-                        smooth: false
-                        MouseArea {
-                            anchors.fill: parent
-                            onPressAndHold: menu2.active ? menu2.hide() : menu2.open(gridItem)
+                    Rectangle {
+                        anchors.fill: parent
+                        color: "transparent"
 
-                            onClicked: {
-                                pageStack.push(Qt.resolvedUrl("BarcodeDisplayPage.qml"), {
-                                                   "barcode_name":  barcodeFavorits.model.get(
-                                                                        index).fav_barcode_name,
-                                                   "zint_code":  barcodeFavorits.model.get(
-                                                                     index).fav_zint_code,
-                                                   "barcode_description":  barcodeFavorits.model.get(
-                                                                               index).fav_barcode_description,
-                                                   "barcode_icon":  barcodeFavorits.model.get(
-                                                                        index).fav_barcode_icon,
-                                                   "barcode_code":  barcodeFavorits.model.get(
-                                                                        index).fav_barcode_code
-                                               })
+                        Image {
+                            id: imageElement
+                            source: fav_barcode_icon !== "" ? "data:image/png;base64," + fav_barcode_icon : "../icons/shablon.svg"
+                            visible: false
+                            fillMode: Image.PreserveAspectCrop
+                            onStatusChanged: {
+                                if (status === Image.Ready) {
+                                    canvas.requestPaint();
+                                }
                             }
                         }
-                      }
+
+                        Canvas {
+                            id: canvas
+                            height: 140
+                            width: parent.width
+                            onPaint: {
+                                var ctx = getContext("2d");
+                                ctx.clearRect(0, 0, width, height);
+                                ctx.beginPath();
+                                ctx.moveTo(20, 0);
+                                ctx.lineTo(width - 20, 0);
+                                ctx.quadraticCurveTo(width, 0, width, 20);
+                                ctx.lineTo(width, height - 20);
+                                ctx.quadraticCurveTo(width, height, width - 20, height);
+                                ctx.lineTo(20, height);
+                                ctx.quadraticCurveTo(0, height, 0, height - 20);
+                                ctx.lineTo(0, 20);
+                                ctx.quadraticCurveTo(0, 0, 20, 0);
+                                ctx.closePath();
+                                ctx.clip();
+                                if (imageElement.width > 0 && imageElement.height > 0) {
+                                    ctx.drawImage(imageElement, 0, 0, width, height);
+                                }
+                            }
+
+                            MouseArea {
+                                anchors.fill: parent
+                                onPressAndHold: menu2.active ? menu2.hide() : menu2.open(gridItem)
+                                onClicked: {
+                                    pageStack.push(Qt.resolvedUrl("BarcodeDisplayPage.qml"), {
+                                                       "barcode_name":  barcodeFavorits.model.get(
+                                                                            index).fav_barcode_name,
+                                                       "zint_code":  barcodeFavorits.model.get(
+                                                                         index).fav_zint_code,
+                                                       "barcode_description":  barcodeFavorits.model.get(
+                                                                                   index).fav_barcode_description,
+                                                       "barcode_icon":  barcodeFavorits.model.get(
+                                                                            index).fav_barcode_icon,
+                                                       "barcode_code":  barcodeFavorits.model.get(
+                                                                            index).fav_barcode_code
+                                                   })
+                                }
+                            }
+                        }
+                    }
 
                     menu: ContextMenu {
                         id: menu2
@@ -135,18 +181,18 @@ Page {
 
 
                     Item {
-                         Image {
-                             id: iconImageIcon
-                             source: DB.img_src(fav_barcode_icon, fav_zint_code, 1)
-                             sourceSize: Qt.size(Theme.itemSizeSmall,
-                                                 Theme.itemSizeSmall)
-                             width: 58
-                             fillMode: Image.PreserveAspectFit
-                             anchors.left: parent.left
-                             anchors.leftMargin: 20
-                             visible: fav_barcode_icon===""
-                             smooth: true
-                            }
+                        Image {
+                            id: iconImageIcon
+                            source: DB.img_src(fav_barcode_icon, fav_zint_code, 1)
+                            sourceSize: Qt.size(Theme.itemSizeSmall,
+                                                Theme.itemSizeSmall)
+                            width: 58
+                            fillMode: Image.PreserveAspectFit
+                            anchors.left: parent.left
+                            anchors.leftMargin: parent.width  * 0.33
+                            visible: fav_barcode_icon===""
+                            smooth: true
+                        }
                         Label {
                             id: barcodeGrid
                             text: fav_barcode_name
@@ -157,7 +203,7 @@ Page {
                             color:  Theme.highlightDimmerColor
                             elide: Text.ElideRight
                             anchors.right: parent.right
-                            anchors.rightMargin: -210
+                            anchors.rightMargin: -190
                         }
 
                     }
@@ -170,7 +216,7 @@ Page {
         Separator {
             color: Theme.primaryColor
             width: parent.width
-              visible:  barcodeFavorits.count>0
+            visible:  barcodeFavorits.count>0
             anchors.horizontalCenter: parent.horizontalCenter
             horizontalAlignment: Qt.AlignHCenter
         }
@@ -180,16 +226,19 @@ Page {
             height:   barcodeFavorits.count>0 ? barcodeFavorits.count>0 && barcodeFavorits.count<4 ? 900 : 700 : 1200
 
             SectionHeader {
+                id: allLabel
                 text: qsTr("All cards")
+                font.pixelSize: Theme.fontSizeMedium
             }
+
+
 
             SilicaListView {
                 id: barcodeList
-                //            visible: mainapp.list=1
                 anchors.fill: parent
                 leftMargin: Theme.horizontalPageMargin
                 rightMargin: Theme.horizontalPageMargin
-                anchors.topMargin: 40
+                anchors.topMargin: 90
 
                 VerticalScrollDecorator {}
 
@@ -199,44 +248,80 @@ Page {
 
                     contentHeight: Theme.itemSizeSmall
                     Item {
-                        anchors {
-                            verticalCenter: parent.verticalCenter
-                        }
+                        anchors.verticalCenter: parent.verticalCenter
                         height: Theme.itemSizeSmall
 
-
-
-                        Image {
-                            id: iconImage
-                            source: barcode_icon!=="" ?"data:image/png;base64," +barcode_icon : DB.img_src(barcode_icon,zint_code,0)
-                            x: Theme.paddingLarge
-                            sourceSize: Qt.size(Theme.itemSizeSmall, Theme.itemSizeSmall)
+                        //                        Image {
+                        //                            id: iconImage
+                        //                            source: barcode_icon!=="" ?"data:image/png;base64," +barcode_icon : DB.img_src(barcode_icon,zint_code,0)
+                        //                            x: Theme.paddingLarge
+                        //                            sourceSize: Qt.size(Theme.itemSizeSmall, Theme.itemSizeSmall)
+                        //                            anchors.verticalCenter: parent.verticalCenter
+                        //                            // width: 58
+                        //                            fillMode: Image.PreserveAspectFit
+                        //                            smooth: true
+                        //                        }
+                        Row {
                             anchors.verticalCenter: parent.verticalCenter
-                            width: 58
-                            fillMode: Image.PreserveAspectFit
-                            smooth: true
+                            spacing: Theme.paddingMedium // Расстояние между изображением и текстом
+
+                            Rectangle {
+                                id: imgrad
+                                implicitWidth: 100 // Установите нужную ширину
+                                implicitHeight: 80 // Установите нужную высоту
+                                color: "transparent"
+
+                                Image {
+                                    id: iconImage
+                                    source: barcode_icon !== "" ? "data:image/png;base64," + barcode_icon : DB.img_src(barcode_icon, zint_code, 0)
+                                    visible: false
+                                    fillMode: Image.PreserveAspectCrop
+                                    onStatusChanged: {
+                                        if (status === Image.Ready) {
+                                            canvas2.requestPaint();
+                                        }
+                                    }
+                                }
+
+                                Canvas {
+                                    id: canvas2
+                                    width: 100
+                                    height: 80
+
+                                    onPaint: {
+                                        var ctx = getContext("2d");
+                                        ctx.clearRect(0, 0, width, height);
+                                        ctx.clearRect(0, 0, width, height);
+                                        ctx.beginPath();
+                                        ctx.moveTo(20, 0);
+                                        ctx.lineTo(width - 20, 0);
+                                        ctx.quadraticCurveTo(width, 0, width, 20);
+                                        ctx.lineTo(width, height - 20);
+                                        ctx.quadraticCurveTo(width, height, width - 20, height);
+                                        ctx.lineTo(20, height);
+                                        ctx.quadraticCurveTo(0, height, 0, height - 20);
+                                        ctx.lineTo(0, 20);
+                                        ctx.quadraticCurveTo(0, 0, 20, 0);
+                                        ctx.closePath();
+                                        ctx.clip();
+                                        if (iconImage.width > 0 && iconImage.height > 0) {
+                                            ctx.drawImage(iconImage, 0, 0, width, height);
+                                        }
+                                    }
+                                }
+                            }
+
+                            Label {
+                                id: barcode
+                                text: barcode_name
+                                verticalAlignment: Text.AlignVCenter
+                                anchors.verticalCenter: imgrad.verticalCenter
+                                font.pixelSize: Theme.fontSizeMedium
+                                color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                            }
                         }
 
-                        Label {
-                            id: barcode
-                            text: barcode_name
-                            anchors.left: iconImage.right
-                            anchors.leftMargin: Theme.paddingMedium
-                            anchors.verticalCenter: iconImage.verticalCenter // Центрируем Label по вертикали относительно Image
-                            font.pixelSize: Theme.fontSizeMedium
-                            color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                          //  visible: barcode_icon===""
-                        }
-                        //Label {
-//                            id: descLabel
-//                            anchors.bottom: barcode.top
-//                            text: barcode_description
-//                            height: parent.height
-//                            font.pixelSize: Theme.fontSizeSmall
-//                            color: listItem.highlighted ? Theme.highlightColor : Theme.secondaryColor
-//                            anchors.leftMargin: Theme.paddingMedium
-//                            anchors.left: iconImage.right
-//                        }
+
                     }
                     onClicked: {
                         pageStack.push(Qt.resolvedUrl("BarcodeDisplayPage.qml"), {
@@ -297,8 +382,8 @@ Page {
 
             ViewPlaceholder {
                 enabled: barcodeList.count === 0
-                text: qsTr("No barcodes defined")
-                hintText: qsTr("Choose \"Add code\" from the menu.")
+                text: mainapp.search ?  qsTr("No card with this name found") : qsTr("No barcodes defined")
+                hintText: !mainapp.search ? qsTr("Choose \"Add code\" from the menu.") : ""
             }
         }
     }

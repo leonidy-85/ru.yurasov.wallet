@@ -6,75 +6,70 @@ import Aurora.Controls 1.0
 
 import "../db.js" as DB
 
-
 Dialog {
     id: scanPage
+    anchors.fill: parent // Заполняем весь родительский элемент
 
-    QrFilter {
-            id: qrFilter
-            objectName: "qrFilter"
-            active: true
-             format: QrFilter.QR_CODE | QrFilter.CODE_128 | QrFilter.EAN_13 | QrFilter.PDF_417
-        }
+    Column {
+        anchors.fill: parent
+        spacing: 10
 
-        VideoOutput {
-            id: viewer
+        // Элемент, который будет занимать оставшееся пространство
+        Item {
+            anchors.fill: parent
+            anchors.bottom: save.top // Привязываем этот элемент к верхней части кнопки
 
-            objectName: "viewer"
-            anchors {
-                topMargin: 90
-                left: parent.left
-                right: parent.right
-                bottom: parent.bottom
-                bottomMargin: Theme.horizontalPageMargin
+            QrFilter {
+                id: qrFilter
+                objectName: "qrFilter"
+                active: true
+                format: QrFilter.QR_CODE | QrFilter.CODE_128 | QrFilter.EAN_13 | QrFilter.PDF_417
             }
-            fillMode: VideoOutput.PreserveAspectFit
-            source: Camera {
-                captureMode: Camera.CaptureVideo
-                focus {
-                    focusMode: CameraFocus.FocusContinuous
-                    focusPointMode: CameraFocus.FocusPointAuto
+
+            VideoOutput {
+                id: viewer
+                objectName: "viewer"
+                anchors {
+                    topMargin: 90
+                    left: parent.left
+                    right: parent.right
+                    bottom: parent.bottom
+                    bottomMargin: Theme.horizontalPageMargin
+                }
+                fillMode: VideoOutput.PreserveAspectFit
+                source: Camera {
+                    captureMode: Camera.CaptureVideo
+                    focus {
+                        focusMode: CameraFocus.FocusContinuous
+                        focusPointMode: CameraFocus.FocusPointAuto
+                    }
+                }
+                filters: [ qrFilter ]
+            }
+
+            Connections {
+                target: qrFilter
+                onResultChanged: {
+                    pageStack.replace(Qt.resolvedUrl("AddBarcodePage.qml"), {
+                        "codeValue": qrFilter.result,
+                        "codeFormat": DB.detectFormat(qrFilter.result)
+                    })
                 }
             }
-            filters: [ qrFilter ]
+
+
         }
 
         Button {
-            id: save
-            width: parent.width
-            text: qsTr("Manual input")
-            onClicked: {
-                   pageStack.replace(Qt.resolvedUrl("AddBarcodePage.qml"), {"codeValue":"" })
-            }
-         }
-
-        Connections {
-            target: qrFilter
-            onResultChanged: {
-//                console.log("Распознанный результат:", qrFilter.result );
-               // console.log("Распознанный Format:", detectFormat(qrFilter.result) );
-
-                pageStack.replace(Qt.resolvedUrl("AddBarcodePage.qml"), {
-                                      "codeValue": qrFilter.result,
-                                      "codeFormat": detectFormat(qrFilter.result)
-                                  })
-             //   qrFilter.clearResult();
-            }
-        }
-
-        function detectFormat(code) {
-               if (/^\d{13}$/.test(code)) {
-                   return "EAN"
-               } else if (/^[ -~]{1,48}$/.test(code)) {
-                   return "Code 128"
-               } else if (/^[ -~]{1,1100}$/.test(code)) {
-                   return "PDF417"
-               } else if (/^[0-9A-Fa-f]{8,}$/.test(code)) {
-                   return "QR Code"
-               } else {
-                   return "Unknown";
+                   id: save
+                   width: parent.width * 0.8
+                   anchors.horizontalCenter: parent.horizontalCenter
+                   anchors.bottom: parent.bottom
+                   anchors.bottomMargin: 30
+                   text: qsTr("Manual input")
+                   onClicked: {
+                       pageStack.replace(Qt.resolvedUrl("AddBarcodePage.qml"), {"codeValue":"" })
+                   }
                }
-           }
-
-
+    }
 }

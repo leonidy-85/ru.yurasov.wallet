@@ -35,7 +35,7 @@ function initializeDB() {
     }
     var code = tx.executeSql("SELECT * FROM barcode");
     if (rs.rows.length === 0) {
-     //initBarcode();
+     initBarcode();
     }
 
     if (rs.rows.length === 95) {
@@ -90,6 +90,9 @@ function initZintCodes() {
     );
     tx.executeSql(
       'insert into zint_codes (ZintCode, Description) values (20, "Code 128")'
+    )
+      tx.executeSql(
+      'insert into zint_codes (ZintCode, Description) values (8, "Code 39")'
     );
     tx.executeSql(
       'insert into zint_codes (ZintCode, Description) values (55, "PDF417")'
@@ -441,6 +444,9 @@ function detectFormat(code) {
     }
     else if (/^[\x20-\x7E]{1,48}$/.test(code)) {
         return "Code 128";
+    }
+    else if (/^[A-Z0-9\-.\ \$\/\+\%]{1,43}$/.test(code)) {
+           return "Code 39";
     }
     else {
         return "Unknown";

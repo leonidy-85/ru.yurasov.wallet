@@ -181,12 +181,15 @@ Page {
             }
             TextField {
                 id: name
-                focus: true
+                //focus: true
                 placeholderText: qsTr("Name")
                 label: placeholderText
                 text: barcode_name
+                validator: RegExpValidator{ regExp: /^(?!\s*$).+/ }
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                EnterKey.onClicked: description.focus = true
+                EnterKey.onClicked: code.focus = true
+                EnterKey.enabled: !errorHighlight
+                onErrorHighlightChanged: { save.enabled = !errorHighlight }
             }
             //            TextField {
             //                id: description

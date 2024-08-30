@@ -57,7 +57,8 @@ import "../db.js" as DB
                           PopupMenuItem {
                               text: qsTr("Add code")
 //                              onClicked: pageStack.push(Qt.resolvedUrl("../pages/AddBarcodePage.qml"))
-                              onClicked: pageStack.push(Qt.resolvedUrl("../pages/ScanBarcodePage.qml"))
+                            //  onClicked: pageStack.push(Qt.resolvedUrl("../pages/ScanBarcodePage.qml"))
+                              onClicked: pageStack.push(Qt.resolvedUrl("../pages/WizardPage.qml"))
                           }
 
                   }

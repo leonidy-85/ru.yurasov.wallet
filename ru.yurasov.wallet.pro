@@ -13,12 +13,21 @@ LIBS += -lpng
 #QT += positioning
 #QT += dbus
 
+QT += multimedia
+
 SOURCES += src/wallet.cpp \
-    src/barcodeimageprovider.cpp
+        src/barcodeimageprovider.cpp \
+        src/camerahelper.cpp \
+        src/qmlimage.cpp \
+        src/resizeimage.cpp
 
 HEADERS += \
+    src/ImageProcessor.h \
     src/barcodeimageprovider.h \
-    src/imageconverter.h
+    src/imageconverter.h \
+    src/camerahelper.h \
+    src/qmlimage.h \
+    src/resizeimage.h
 #    src/zipfile.h \
 #    src/zipfileimageprovider.h
 
@@ -31,6 +40,7 @@ DISTFILES += qml/wallet.qml \
     qml/pages/MainPage.qml \
     qml/pages/ScanBarcodePage.qml \
     qml/pages/ViewPkpassPage.qml \
+    qml/pages/WizardPage.qml \
     qml/pagesEditBarcodeGroupPage.qml \
     qml/pages/EditBarcodePage.qml \
     qml/components/FancyPageHeader.qml \
@@ -68,3 +78,6 @@ include(src/zint/zint.pri)
 include(src/FileIO/FileIO.pri)
 
 
+message(AURORA_SDK_VERSION: $$AURORA_SDK_VERSION)
+DEFINES += \
+    AURORA_SDK_VERSION=\\\"$${AURORA_SDK_VERSION}\\\"

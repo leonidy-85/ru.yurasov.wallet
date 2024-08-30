@@ -34,6 +34,20 @@ Page {
     }
 
 
+    Timer {
+        id: waitTimer
+        interval: 500
+        repeat: true//mainapp.base64
+        running: true
+        onTriggered: {
+            if(mainapp.base64!==""){
+                barcode_icon=mainapp.base64
+                mainapp.base64=""
+            }
+        }
+    }
+
+
     function checkFileName(file) {
         if (exportFile.exists(file)) {
             return(true)
@@ -143,7 +157,7 @@ Page {
         Component {
             id: filePickerPage
             FilePickerPage {
-                nameFilters: [ '*.png','*.jpg' ]
+                nameFilters: [ '*.png','*.jpg','*.svg' ]
                 onSelectedContentPropertiesChanged: {
                     fileName.text = selectedContentProperties.filePath
                 }
@@ -154,6 +168,17 @@ Page {
             id: dialog
             spacing: 10
             width: parent.width
+
+
+
+            PullDownMenu {
+              MenuItem {
+                text: qsTr("Тake photo")
+                onClicked: {
+                  pageStack.push(Qt.resolvedUrl("../pages/TakePhotoPage.qml"))
+                }
+              }
+            }
 
             PageHeader {
                 objectName: "pageHeader"
@@ -212,8 +237,9 @@ Page {
                 horizontalAlignment: Qt.AlignHCenter
             }
 
-
-
+            SectionHeader {
+                text: qsTr("Logo card")
+            }
             Row {
                 spacing: (width / 2) * 0.1
                 width: parent.width
@@ -229,17 +255,43 @@ Page {
                     onClicked: {
                         barcodeIcon.source = "";
                         barcode_clear=1
+                        barcode_icon = ""
+                        fileName.text=""
                     }
                 }
                 Image {
                     id: barcodeIcon
-                    source: barcode_icon !== "" && fileName.text==="" ? "data:image/png;base64," + barcode_icon  : fileName.text
+                    source: barcode_icon !== "" && fileName.text==="" ?  barcode_icon  : fileName.text
                     sourceSize: Qt.size(Theme.itemSizeSmall,
                                         Theme.itemSizeSmall)
                     height: 50
                     anchors.verticalCenter: parent.verticalCenter
+                 }
                 }
-            }
+
+//            Row {
+//                IconButton {
+//                    id: buttonIcon
+//                    icon.source: "image://theme/icon-cover-camera?" + (pressed
+//                                 ? Theme.highlightColor
+//                                 : Theme.primaryColor)
+//                    visible: barcode_icon === "" &&  fileName.text===""
+//                    onClicked:   pageStack.push(Qt.resolvedUrl("TakePhotoPage.qml"))
+//                }
+
+//                Label{
+//                    id: labelIcon
+//                    text: qsTr("Press icon take photo")
+//                    verticalAlignment: Text.AlignVCenter
+//                    anchors.verticalCenter: buttonIcon.verticalCenter
+//                    font.pixelSize: Theme.fontSizeMedium
+//                    visible: barcode_icon === "" &&  fileName.text===""
+//                    color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+//                }
+//            }
+
+
+
 
             TextField {
                 id: fileName

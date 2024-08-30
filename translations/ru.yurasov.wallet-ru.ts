@@ -62,49 +62,54 @@
 <context>
     <name>AddBarcodePage</name>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="51"/>
-        <source>barcode successfully added!</source>
-        <translation>Карта успешно добавлена</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="48"/>
-        <source>Could not add barcode!</source>
-        <translation>Не удалось добавить так нормально?карту!</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="37"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="49"/>
         <source>the name field cannot be empty!</source>
-        <translation>Поле название карты не может быть пустым! </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="41"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="53"/>
         <source>the code field cannot be empty!</source>
-        <translation>Поле номер карты не может быть пустым! </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddBarcodePage.qml" line="60"/>
+        <source>Could not add barcode!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="63"/>
+        <source>barcode successfully added!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="72"/>
         <source>Add card</source>
-        <translation>Добавить карту</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="88"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="87"/>
+        <source>Scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="110"/>
         <source>Barcode type</source>
-        <translation>Тип кода</translation>
+        <translation type="unfinished">Тип штрих-кода</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="102"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="135"/>
         <source>Name</source>
-        <translation>Название карты</translation>
+        <translation type="unfinished">Имя</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="128"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="161"/>
         <source>Code</source>
-        <translation>Номер карты</translation>
+        <translation type="unfinished">Номер карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="145"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="178"/>
         <source>Save</source>
-        <translation>Добавить</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -133,12 +138,12 @@
 <context>
     <name>BarcodeDisplayPage</name>
     <message>
-        <location filename="../qml/pages/BarcodeDisplayPage.qml" line="114"/>
+        <location filename="../qml/pages/BarcodeDisplayPage.qml" line="113"/>
         <source>Card number</source>
         <translation>Номер карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/BarcodeDisplayPage.qml" line="129"/>
+        <location filename="../qml/pages/BarcodeDisplayPage.qml" line="128"/>
         <source>Can&apos;t create QR-Code from an empty String</source>
         <translation></translation>
     </message>
@@ -154,63 +159,73 @@
 <context>
     <name>EditBarcodePage</name>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="98"/>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="284"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="112"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="336"/>
         <source>Update</source>
         <translation>Обновить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="172"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="197"/>
         <source>Barcode type</source>
         <translation>Тип штрих-кода</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="41"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="55"/>
         <source>Given file does not exist!</source>
         <translation>Данный файл не существует</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="54"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="68"/>
         <source>the image cannot be more than 650x400. Loaded image </source>
         <translation>Изображение не может быть более 650x400. Загруженное изображение </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="160"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="176"/>
+        <source>Тake photo</source>
+        <translation>Сделать фото</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="185"/>
         <source>Update barcode</source>
         <translation>Обновить данные карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="185"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="210"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="202"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="227"/>
         <source>Code</source>
         <translation>Номер карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="227"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="241"/>
+        <source>Logo card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="253"/>
         <source>Remove icon</source>
         <translation>Удалить лого</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="248"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="300"/>
         <source>Filename</source>
         <translation>Имя файла</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="256"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="308"/>
         <source>File to import</source>
         <translation>Файл для загрузки</translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="257"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="309"/>
         <source>None</source>
         <translation> не выбран  </translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="270"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="322"/>
         <source>Here you can download the logo from the file, but not more than 650x400</source>
         <translation>Здесь вы можете загрузить логотип из файла, но не больше чем 650x400</translation>
     </message>
@@ -234,7 +249,7 @@
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="177"/>
-        <location filename="../qml/pages/MainPage.qml" line="371"/>
+        <location filename="../qml/pages/MainPage.qml" line="361"/>
         <source>Remove </source>
         <translation>Удалить</translation>
     </message>
@@ -249,47 +264,47 @@
         <translation>Мои карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="347"/>
+        <location filename="../qml/pages/MainPage.qml" line="337"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="366"/>
+        <location filename="../qml/pages/MainPage.qml" line="356"/>
         <source>Add </source>
         <translation>Добавить </translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="366"/>
+        <location filename="../qml/pages/MainPage.qml" line="356"/>
         <source> to favorites</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="372"/>
+        <location filename="../qml/pages/MainPage.qml" line="362"/>
         <source>Deleting </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="385"/>
+        <location filename="../qml/pages/MainPage.qml" line="381"/>
         <source>No barcodes defined</source>
         <translation>Нет добавленных карт</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="385"/>
+        <location filename="../qml/pages/MainPage.qml" line="381"/>
         <source>No card with this name found</source>
-        <translation>Карта с таким именем не найдена</translation>
+        <translation>Такая карта не найдена</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="386"/>
-        <source>Choose &quot;Add code&quot; from the menu.</source>
-        <translation>Выберите добавить карту из меню.</translation>
+        <location filename="../qml/pages/MainPage.qml" line="396"/>
+        <source>Choose &quot;Add card&quot; from the menu or press of plus.</source>
+        <translation>Выберите «Добавить карту» в меню или нажмите «плюс».</translation>
     </message>
 </context>
 <context>
     <name>ScanBarcodePage</name>
     <message>
-        <location filename="../qml/pages/ScanBarcodePage.qml" line="69"/>
-        <source>Manual input</source>
-        <translation>Ручной ввод</translation>
+        <location filename="../qml/pages/ScanBarcodePage.qml" line="76"/>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -375,11 +390,32 @@
     </message>
 </context>
 <context>
+    <name>TakePhotoPage</name>
+    <message>
+        <location filename="../qml/pages/TakePhotoPage.qml" line="148"/>
+        <source>Take photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ViewPkpassPage</name>
     <message>
         <location filename="../qml/pages/ViewPkpassPage.qml" line="24"/>
         <source>Fullscreen Barcode</source>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>WizardPage</name>
+    <message>
+        <location filename="../qml/pages/WizardPage.qml" line="35"/>
+        <source>Wizard add card</source>
+        <translation>Мастер добавления карт</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/WizardPage.qml" line="48"/>
+        <source>Search...</source>
+        <translation>Поиск...</translation>
     </message>
 </context>
 </TS>

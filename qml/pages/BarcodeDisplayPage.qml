@@ -23,18 +23,17 @@ Page {
 
         Image {
             id: iconImageGrid
-            source: barcode_icon !== "" ? "data:image/png;base64," + barcode_icon : "../icons/shablon.svg"
+            source: barcode_icon !== "" ?  barcode_icon : "../icons/shablon.svg"
             width: parent.width * 0.8
             height: implicitHeight
             fillMode: Image.PreserveAspectFit
             anchors.horizontalCenter: parent.horizontalCenter
             smooth: false
 
-            // Вложенный Column для расположения элементов внутри iconImageGrid
             Column {
                 anchors.fill: parent
                 anchors.margins: 20
-                spacing: 10  // Отступы между элементами
+                spacing: 10
 
                 Item {
                     Image {

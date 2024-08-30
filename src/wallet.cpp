@@ -20,42 +20,54 @@
 //#include "zipfileimageprovider.h"
 
 
+#include "camerahelper.h"
+#include "qmlimage.h"
+#include "ImageProcessor.h"
+#include "resizeimage.h"
+
+
 using namespace Aurora;
 
 int main(int argc, char *argv[])
 {
 
 
-//    QDBusInterface other("ru.yurasov.wallet", "/ru/yurasov/wallet", "ru.yurasov.wallet");
-//    // check if another instance is running
-//    if (other.isValid()) {
-//        // yes, it's running, so signal it and exit
-//        QString origin;
-//        if (argc == 2)
-//            origin = argv[1];
-//        other.call("openPass", origin);
-//        return 0;
-//    }
+    //    QDBusInterface other("ru.yurasov.wallet", "/ru/yurasov/wallet", "ru.yurasov.wallet");
+    //    // check if another instance is running
+    //    if (other.isValid()) {
+    //        // yes, it's running, so signal it and exit
+    //        QString origin;
+    //        if (argc == 2)
+    //            origin = argv[1];
+    //        other.call("openPass", origin);
+    //        return 0;
+    //    }
 
 
     QString homepath;
     homepath = QDir::homePath();
-       // Register FileIO Class
+    // Register FileIO Class
     qmlRegisterType<FileIO, 1>("ru.yurasov.wallet.FileIO", 1, 0, "FileIO");
     //convertor to base64
     qmlRegisterType<ImageConverter>("ru.yurasov.wallet.imageConverter", 1, 0, "ImageConverter");
-
+    qmlRegisterType<QmlImage>("ru.yurasov.wallet.QmlImage", 1, 0, "QmlImage");
+    qmlRegisterType<ImageProcessor>("ru.yurasov.wallet.imageProcessor", 1, 0, "ImageProcessor");
+    qmlRegisterType<resizeImage>("ru.yurasov.wallet.resizeImage", 1, 0, "ResizeImage");
     QGuiApplication* app = Application::application(argc, argv);
 
     QLocale::setDefault(QLocale::c());
+
+    CameraHelper camera_helper;
 
     QQuickView* view = Application::createView();
     view->rootContext()->setContextProperty("homedir", homepath);
     view->rootContext()->setContextProperty("version", APP_VERSION);
     view->rootContext()->setContextProperty("buildyear", BUILD_YEAR);
+    view->rootContext()->setContextProperty("cameraHelper", &camera_helper);
+
 
     view->engine()->addImageProvider("barcode", new BarcodeImageProvider());
-  //  view->engine()->addImageProvider("zipimage", new ZipFileImageProvider());
+    //  view->engine()->addImageProvider("zipimage", new ZipFileImageProvider());
 
 
     view->setSource(Application::pathTo("qml/wallet.qml"));

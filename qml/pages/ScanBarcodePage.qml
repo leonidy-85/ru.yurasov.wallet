@@ -8,13 +8,17 @@ import "../db.js" as DB
 
 Dialog {
     id: scanPage
-    anchors.fill: parent // Заполняем весь родительский элемент
+    anchors.fill: parent
+    property string barcode_name : ""
+    property string barcode_type : ""
+    property string barcode_icon : ""
+    property int type : 0
 
     Column {
         anchors.fill: parent
         spacing: 10
 
-        // Элемент, который будет занимать оставшееся пространство
+
         Item {
             anchors.fill: parent
             anchors.bottom: save.top // Привязываем этот элемент к верхней части кнопки
@@ -52,7 +56,10 @@ Dialog {
                 onResultChanged: {
                     pageStack.replace(Qt.resolvedUrl("AddBarcodePage.qml"), {
                         "codeValue": qrFilter.result,
-                        "codeFormat": DB.detectFormat(qrFilter.result)
+                        "codeFormat": type===1 ? "" : DB.detectFormat(qrFilter.result),
+                                          "barcode_name" : barcode_name,
+                                          "barcode_type" : barcode_type,
+                                           "barcode_icon" : barcode_icon
                     })
                 }
             }
@@ -66,9 +73,13 @@ Dialog {
                    anchors.horizontalCenter: parent.horizontalCenter
                    anchors.bottom: parent.bottom
                    anchors.bottomMargin: 30
-                   text: qsTr("Manual input")
+                   text: qsTr("Cancel")
                    onClicked: {
-                       pageStack.replace(Qt.resolvedUrl("AddBarcodePage.qml"), {"codeValue":"" })
+                       pageStack.replace(Qt.resolvedUrl("AddBarcodePage.qml"), {"codeValue":"",
+                                             "barcode_name" : barcode_name,
+                                             "barcode_type" : barcode_type,
+                                              "barcode_icon" : barcode_icon
+                                         })
                    }
                }
     }

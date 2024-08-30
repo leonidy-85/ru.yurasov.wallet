@@ -116,7 +116,7 @@ Page {
 
                         Image {
                             id: imageElement
-                            source: fav_barcode_icon !== "" ? "data:image/png;base64," + fav_barcode_icon : "../icons/shablon.svg"
+                            source: fav_barcode_icon !== "" ?  fav_barcode_icon : "../icons/shablon.svg"
                             visible: false
                             fillMode: Image.PreserveAspectCrop
                             onStatusChanged: {
@@ -251,16 +251,6 @@ Page {
                         anchors.verticalCenter: parent.verticalCenter
                         height: Theme.itemSizeSmall
 
-                        //                        Image {
-                        //                            id: iconImage
-                        //                            source: barcode_icon!=="" ?"data:image/png;base64," +barcode_icon : DB.img_src(barcode_icon,zint_code,0)
-                        //                            x: Theme.paddingLarge
-                        //                            sourceSize: Qt.size(Theme.itemSizeSmall, Theme.itemSizeSmall)
-                        //                            anchors.verticalCenter: parent.verticalCenter
-                        //                            // width: 58
-                        //                            fillMode: Image.PreserveAspectFit
-                        //                            smooth: true
-                        //                        }
                         Row {
                             anchors.verticalCenter: parent.verticalCenter
                             spacing: Theme.paddingMedium // Расстояние между изображением и текстом
@@ -273,7 +263,7 @@ Page {
 
                                 Image {
                                     id: iconImage
-                                    source: barcode_icon !== "" ? "data:image/png;base64," + barcode_icon : DB.img_src(barcode_icon, zint_code, 0)
+                                    source: barcode_icon !== "" ?  barcode_icon : DB.img_src(barcode_icon, zint_code, 0)
                                     visible: false
                                     fillMode: Image.PreserveAspectCrop
                                     onStatusChanged: {
@@ -380,11 +370,59 @@ Page {
             }
 
 
+
+
             ViewPlaceholder {
                 enabled: barcodeList.count === 0
-                text: mainapp.search ?  qsTr("No card with this name found") : qsTr("No barcodes defined")
-                hintText: !mainapp.search ? qsTr("Choose \"Add code\" from the menu.") : ""
+                Column {
+                    anchors.centerIn: parent // Центрируем Column внутри ViewPlaceholder
+
+                    Text {
+                        text: mainapp.search ? qsTr("No card with this name found") : qsTr("No barcodes defined")
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        color: Theme.secondaryHighlightColor
+                        font.pixelSize: Theme.fontSizeExtraLarge
+                        wrapMode: Text.Wrap
+                    }
+
+                    Text {
+                       // id: textPlaceholder
+                        maximumLineCount: 15
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        font.pixelSize: Theme.fontSizeMedium
+                        color: Theme.secondaryColor
+                        width: parent.width - Theme.paddingLarge
+                        wrapMode: Text.Wrap
+                        text: !mainapp.search ? qsTr("Choose \"Add card\" from the menu or press of plus.") : ""
+                    }
+
+
+                    SectionHeader {
+                        text: ""
+                    }
+                    Rectangle {
+                        visible:  barcodeList.count==0 && !mainapp.search
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        width: 300
+                        height: 150
+                        radius: 20
+                        color: Qt.rgba(1, 1, 1, 0)
+                        border.color: "white"
+                        border.width: 1
+                        IconButton {
+                            icon.source: "image://theme/icon-m-add?" + (pressed
+                                         ? Theme.highlightColor
+                                         : Theme.primaryColor)
+
+                            anchors.centerIn: parent
+                            onClicked: pageStack.push(Qt.resolvedUrl("../pages/WizardPage.qml"))
+                        }
+                    }
+                }
             }
+
+
+
         }
     }
 }

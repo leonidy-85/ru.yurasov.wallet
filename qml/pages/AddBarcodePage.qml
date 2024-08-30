@@ -3,11 +3,18 @@ import Sailfish.Silica 1.0
 import Nemo.Notifications 1.0
 import "../db.js" as DB
 
-Dialog {
+Page {
     id: addCodePage
     property string codeValue
-    property string codeFormat : "EAN"
+    property string barcode_name : ""
+    property string barcode_type : ""
+    property string barcode_icon : ""
+    property string codeFormat : ""
+ //   property string barcode_icon : ""
+
     property int barcode_index: 0
+
+    property int type: 0
 
     property var dataModel: ListModel {}
 
@@ -17,14 +24,19 @@ Dialog {
                              "Name": name,
                              "LineCount": linecount
                          })
-        if (name === codeFormat) {
+
+        if (name === barcode_type) {
             barcode_index = linecount
         }
     }
 
     Component.onCompleted: {
         DB.readBarcodeList(1)
-        barcodetype.currentIndex = barcode_index
+        codeFormat=barcode_type
+        name.text=barcode_name
+        if(type===0){
+          barcodetype.currentIndex = barcode_index
+        }
     }
 
     Notification {
@@ -43,7 +55,7 @@ Dialog {
        }
         var result = DB.writeBarcode(name.text.trim(),
                                      barcodetype.currentItem.text,
-                                     "", code.text.trim(), '', 0, '')
+                                     "", code.text.trim(), barcode_icon, 0, '')
        if (result === "ERROR") {
            DB.banner("ERROR", qsTr("Could not add barcode!"))
            return
@@ -70,20 +82,30 @@ Dialog {
 
 
 
+        PullDownMenu {
+          MenuItem {
+            text: qsTr("Scan")
+            onClicked: {
+              pageStack.replace(Qt.resolvedUrl("../pages/ScanBarcodePage.qml"),{
+                                 "type": type,
+                                "barcode_name" : barcode_name,
+                                "barcode_type" : barcode_type,
+                                 "barcode_icon" : barcode_icon
+                             })
+            }
+          }
+        }
+
+
         ScrollDecorator {}
 
         Column {
             id: col
             spacing: 5
             width: parent.width
-//            DialogHeader {
-//                id: header
-////                acceptText: qsTr("Create code")
-//            }
 
             ComboBox {
                 id: barcodetype
-//                anchors.top: col.bottom
                 anchors.topMargin: 40
                 label: qsTr("Barcode type")
                 menu: ContextMenu {
@@ -96,11 +118,22 @@ Dialog {
                 }
             }
 
+            Image {
+                id: barcodeIcon
+                source: barcode_icon !== "" ?  barcode_icon  : "../icons/shablon.svg"
+                sourceSize: Qt.size(Theme.itemSizeSmall,
+                                    Theme.itemSizeSmall)
+                width: 120
+                height: 80
+                anchors.leftMargin: 20
+             }
+
+
             TextField {
                 id: name
                 focus: true
                 placeholderText: qsTr("Name")
-                label: placeholderText
+                label: type ===1 ? "" : placeholderText
                 width: parent.width
                 text: ""
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -145,8 +178,6 @@ Dialog {
                     text: qsTr("Save")
                     onClicked: saveCard()
                  }
-
-
         }
     }
 }

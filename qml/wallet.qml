@@ -14,6 +14,8 @@ ApplicationWindow {
     property string codeDescription: ""
     property string iconSource: ""
 
+    property string base64: ""
+
     property int view: 1//list
 
 

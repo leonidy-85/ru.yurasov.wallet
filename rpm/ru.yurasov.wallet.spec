@@ -16,7 +16,7 @@ Requires:   qr-filter-qml-plugin
 BuildRequires:  libpng
 BuildRequires:  desktop-file-utils
 BuildRequires:  pkgconfig(Qt5DBus)
-BuildRequires:  pkgconfig(liblzma)
+#BuildRequires:  pkgconfig(liblzma)
 #BuildRequires:  bzip2-devel
 BuildRequires:  desktop-file-utils
 

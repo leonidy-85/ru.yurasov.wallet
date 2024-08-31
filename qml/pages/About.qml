@@ -27,9 +27,7 @@ Page {
             id: col
             spacing: 20
             width: parent.width
-            PageHeader {
-                objectName: "pageHeader"
-            }
+
 
             Label {
                 text:  qsTr("Wallet")

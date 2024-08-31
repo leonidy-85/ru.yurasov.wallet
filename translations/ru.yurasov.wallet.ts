@@ -4,84 +4,84 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="35"/>
+        <location filename="../qml/pages/About.qml" line="33"/>
         <source>Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="44"/>
+        <location filename="../qml/pages/About.qml" line="42"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="49"/>
+        <location filename="../qml/pages/About.qml" line="47"/>
         <source>Your wallet for all your scannable codes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="64"/>
+        <location filename="../qml/pages/About.qml" line="62"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="68"/>
+        <location filename="../qml/pages/About.qml" line="66"/>
         <source>© Leonid Yurasov </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="79"/>
+        <location filename="../qml/pages/About.qml" line="77"/>
         <source>Wallet is open source software licensed under the terms of the GNU General Public License.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="88"/>
+        <location filename="../qml/pages/About.qml" line="86"/>
         <source>For suggestions, bugs, ideas or financial support visit </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="105"/>
+        <location filename="../qml/pages/About.qml" line="103"/>
         <source>Using </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="105"/>
+        <location filename="../qml/pages/About.qml" line="103"/>
         <source> as backend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="118"/>
+        <location filename="../qml/pages/About.qml" line="116"/>
         <source>Based on </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="127"/>
+        <location filename="../qml/pages/About.qml" line="125"/>
         <source>Thanks to Arno Dekker for the idea and inspiration</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="137"/>
+        <location filename="../qml/pages/About.qml" line="135"/>
         <source>Thanks to Alexander for the owner and the breakdown of the card number by 4 characters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="147"/>
+        <location filename="../qml/pages/About.qml" line="145"/>
         <source>Donate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="156"/>
+        <location filename="../qml/pages/About.qml" line="154"/>
         <source>Your help allows us to make this project better.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="167"/>
+        <location filename="../qml/pages/About.qml" line="165"/>
         <source>If you like the app, you can donate to the author of the app via </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="183"/>
-        <location filename="../qml/pages/About.qml" line="199"/>
-        <location filename="../qml/pages/About.qml" line="216"/>
+        <location filename="../qml/pages/About.qml" line="181"/>
+        <location filename="../qml/pages/About.qml" line="197"/>
+        <location filename="../qml/pages/About.qml" line="214"/>
         <source>The address has been copied to the clipboard.</source>
         <translation type="unfinished"></translation>
     </message>

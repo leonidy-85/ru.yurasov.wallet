@@ -1,13 +1,20 @@
 import QtQuick 2.5
 import Sailfish.Silica 1.0
+import Nemo.Notifications 1.0
+
+import "../db.js" as DB
 
 Page {
     id: aboutPage
     property bool largeScreen: Screen.width > 540
 
-//    App {
-//        id: bar
-//    }
+    //    App {
+    //        id: bar
+    //    }
+    Notification {
+        id: notification
+        itemCount: 1
+    }
 
     SilicaFlickable {
         anchors.fill: parent
@@ -71,20 +78,20 @@ Page {
                 color: Theme.secondaryColor
                 text: qsTr("Wallet is open source software licensed under the terms of the GNU General Public License.")
             }
-                        Label {
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            width: parent.width - 2*Theme.horizontalPageMargin
-                            horizontalAlignment: Text.AlignHCenter
-                            wrapMode: Text.Wrap
-                            font.pixelSize: Theme.fontSizeSmall
-                            color: Theme.secondaryColor
-                            text: qsTr("For suggestions, bugs and ideas visit ")
-                        }
-                        Button {
-                            text: "GitHub"
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            onClicked: Qt.openUrlExternally("https://github.com/leonidy-85/ru.yurasov.wallet")
-                        }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                text: qsTr("For suggestions, bugs, ideas or financial support visit ")
+            }
+            Button {
+                text: "GitHub"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: Qt.openUrlExternally("https://github.com/leonidy-85/ru.yurasov.wallet/tree/dev_5")
+            }
             Separator {
                 color: Theme.primaryColor
                 width: parent.width
@@ -120,6 +127,95 @@ Page {
                 text: qsTr("Thanks to Arno Dekker for the idea and inspiration")
             }
 
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                text: qsTr("Thanks to Alexander for the owner and the breakdown of the card number by 4 characters")
+            }
+            Separator {
+                color: Theme.primaryColor
+                width: parent.width
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Qt.AlignHCenter
+            }
+
+            SectionHeader {
+                text: qsTr("Donate")
+            }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                text:  qsTr("Your help allows us to make this project better.")
+            }
+
+            Label {
+                id: ymoney
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                text: qsTr("If you like the app, you can donate to the author of the app via ")+ "<a href=\"https://forms.yandex.ru/u/66d272b8068ff021f89c2953/\">ЮMoney</a>"
+            }
+
+            TextArea {
+                id: textBTC
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                readOnly: true
+                anchors.margins: 0
+                text: "BTC: 1BS637NuDU37T8tfAwVMr5xSDD9vfg1mwT"
+                onClicked:{
+                    textBTC.select(4, textBTC.text.length);
+                    textBTC.copy()
+                    DB.banner('OK', qsTr("The address has been copied to the clipboard."))
+                }
+            }
+            TextArea {
+                id: textTON
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                readOnly: true
+                anchors.margins: 0
+                text: "TON: UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3"
+                onClicked:{
+                    textTON.select(4, textTON.text.length);
+                    textTON.copy()
+                    DB.banner('OK', qsTr("The address has been copied to the clipboard."))
+                }
+            }
+
+            TextArea {
+                id: textDOGS
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                readOnly: true
+                anchors.margins: 0
+                text: "DOGS: UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3"
+                onClicked:{
+                    textDOGS.select(4, textDOGS.text.length);
+                    textDOGS.copy()
+                    DB.banner('OK', qsTr("The address has been copied to the clipboard."))
+                }
+            }
         }
     }
 }

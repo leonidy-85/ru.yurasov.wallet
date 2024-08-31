@@ -59,6 +59,7 @@ DISTFILES += qml/wallet.qml \
     qml/cover/cover_background.png \
     rpm/ru.yurasov.wallet.changes.in \
     rpm/ru.yurasov.wallet.spec \
+    README.md\
     qml/db.js
 
 AURORAAPP_ICONS = 86x86 108x108 128x128 172x172

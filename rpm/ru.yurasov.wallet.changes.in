@@ -19,6 +19,9 @@
 #- Saturday - Sat
 #- Sunday - Sun
 #
+* Sat August 31 2024 Yurasov Leonid 1.2-1
+- Fix GUI , add load image, add wizard
+
 * Thu August 22 2024 Yurasov Leonid 1.1-12
 - Fix GUI , add image radius
 

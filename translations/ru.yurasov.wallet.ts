@@ -102,12 +102,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="161"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="163"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="178"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="180"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
@@ -160,7 +160,7 @@
     <name>EditBarcodePage</name>
     <message>
         <location filename="../qml/pages/EditBarcodePage.qml" line="112"/>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="336"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="339"/>
         <source>Update</source>
         <translation type="unfinished"></translation>
     </message>
@@ -195,37 +195,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="227"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="230"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="241"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="244"/>
         <source>Logo card</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="253"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="256"/>
         <source>Remove icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="300"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="303"/>
         <source>Filename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="308"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="311"/>
         <source>File to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="309"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="312"/>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/EditBarcodePage.qml" line="322"/>
+        <location filename="../qml/pages/EditBarcodePage.qml" line="325"/>
         <source>Here you can download the logo from the file, but not more than 650x400</source>
         <translation type="unfinished"></translation>
     </message>

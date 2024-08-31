@@ -61,7 +61,7 @@
     <message>
         <location filename="../qml/pages/About.qml" line="135"/>
         <source>Thanks to Alexander for the owner and the breakdown of the card number by 4 characters</source>
-        <translation>Спасибо Alexander за владатор и разбивку по 4 символа номера карты</translation>
+        <translation>Спасибо Alexander за валидатор и разбивку по 4 символа номера карты</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="145"/>

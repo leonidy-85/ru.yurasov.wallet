@@ -97,7 +97,7 @@ Page {
 
         Label {
             id: qRLabel
-            text: barcode_code
+            text: formatCode(barcode_code)
             height: 40
             font.pixelSize: Theme.fontSizeExtraLargeBase
             color: Theme.primaryColor
@@ -132,5 +132,18 @@ Page {
                 mainapp.barcodeDisplayed = true;
             }
         }
+    }
+
+    /** Разбивка по 4 символа для цифровых кодов */
+    function formatCode(barCode) {
+        var result = ""
+        if (isNaN(barCode)) {
+            result = barCode
+        } else {
+            for (var i = 0; i < barCode.length; i+=4) {
+              result += barCode.slice(i, i + 4) + " "
+            }
+        }
+        return result.trim();
     }
 }

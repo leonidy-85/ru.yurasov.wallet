@@ -131,13 +131,15 @@ Page {
 
             TextField {
                 id: name
-                focus: true
+                //focus: true
                 placeholderText: qsTr("Name")
                 label: type ===1 ? "" : placeholderText
                 width: parent.width
-                text: ""
+                validator: RegExpValidator{ regExp: /^(?!\s*$).+/ }
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                EnterKey.onClicked: description.focus = true
+                EnterKey.onClicked: code.focus = true
+                EnterKey.enabled: !errorHighlight
+                onErrorHighlightChanged: { saveButton.enabled = !errorHighlight }
             }
 
 //            TextField {

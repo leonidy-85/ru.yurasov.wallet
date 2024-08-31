@@ -35,35 +35,35 @@ function initializeDB() {
     tx.executeSql(
       "CREATE UNIQUE INDEX IF NOT EXISTS code ON market(id)"
     );
-    var rs = tx.executeSql("SELECT * FROM zint_codes");
-    if (rs.rows.length === 0) {
-      initZintCodes();
-    }
-    var code = tx.executeSql("SELECT * FROM barcode");
-    if (code.rows.length === 0) {
-     //initBarcode();
-    }
-    var wizard = tx.executeSql("SELECT * FROM market");
-    if (wizard.rows.length === 0) {
-     initWizard();
-    }
+      var rs = tx.executeSql("SELECT * FROM zint_codes");
+          if (rs.rows.length === 0) {
+            initZintCodes();
+          }
+          var code = tx.executeSql("SELECT * FROM barcode");
+          if (code.rows.length === 0) {
+           //initBarcode();
+          }
+          var wizard = tx.executeSql("SELECT * FROM market");
+          if (wizard.rows.length === 0) {
+           initWizard();
+          }
 
-    if (rs.rows.length === 95) {
-      // old amount of records, let's re-add
-      tx.executeSql(
-        "delete from zint_codes"
-      );
-      initZintCodes();
-    }
-//    try {
-//      tx.executeSql("ALTER TABLE barcode_group ADD COLUMN IsDefault INTEGER");
-//    } catch (sqlErr) {
-//      return "Column already exists";
-//    }
-  });
-   mainapp.barcodeUpdate=true
-  return db;
-}
+          if (rs.rows.length === 95) {
+            // old amount of records, let's re-add
+            tx.executeSql(
+              "delete from zint_codes"
+            );
+            initZintCodes();
+          }
+      //    try {
+      //      tx.executeSql("ALTER TABLE barcode_group ADD COLUMN IsDefault INTEGER");
+      //    } catch (sqlErr) {
+      //      return "Column already exists";
+      //    }
+        });
+         mainapp.barcodeUpdate=true
+        return db;
+      }
 
 /*************************************
  * Initialize the initBarcode table
@@ -413,7 +413,7 @@ function db2json() {
   });
 
   if (dataList.length > 0) {
-    return(JSON.stringify({"app": "wallet", "version": 2, "dataList": dataList}));
+    return(JSON.stringify({"app": "wallet", "version": '3', "dataList": dataList}));
   } else {
     return("")
   }
@@ -423,10 +423,10 @@ function db2json() {
 /*** import data JSON  ***/
 /***************************************/
 function json2db(jsonString, error) {
-  var select =0 ;
+  var Icon  ;
   var json = JSON.parse(jsonString);
   error = "";
-  if ((json.version !== "1" || json.version !== "2")  && json.app !== "wallet" ) {
+  if ((json.version !== "1" || json.version !== "2" || json.version !== "3")  && json.app !== "wallet" ) {
     error = "Unrecognized format, file is not a Wallet export";
     return(false);
   } else {
@@ -435,8 +435,14 @@ function json2db(jsonString, error) {
     if (dataList.length > 0) {
       while(dataList.length > 0) {
         var Item = dataList.shift();
-          if(json.version === "2"){select=Item.Sel}
-            writeBarcode(Item.Name, Item.Type, Item.Description, Item.Code, Item.Icon, select);
+          if(json.version === "2" || json.version === 2){
+              if(Item.Icon!==null){Icon="data:image/png;base64," + Item.Icon}
+              console.log(Icon)
+          }
+          if(json.version === "3"){
+              if(Item.Icon!==null){Icon= Item.Icon}
+          }
+            writeBarcode(Item.Name, Item.Type, Item.Description, Item.Code, Icon, Item.Select );
       }
      // parentPage.refreshOTPList();
       return(true);

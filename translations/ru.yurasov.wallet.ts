@@ -89,57 +89,52 @@
 <context>
     <name>AddBarcodePage</name>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="49"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="51"/>
         <source>the name field cannot be empty!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="53"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="55"/>
         <source>the code field cannot be empty!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="60"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="62"/>
         <source>Could not add barcode!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="63"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="65"/>
         <source>barcode successfully added!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="72"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="74"/>
         <source>Add card</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="87"/>
-        <source>Scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="109"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="93"/>
         <source>Barcode type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="139"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="119"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="151"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="131"/>
         <source>Additionally</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="162"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="145"/>
         <source>Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="179"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="182"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>

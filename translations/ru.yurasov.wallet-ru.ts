@@ -89,57 +89,52 @@
 <context>
     <name>AddBarcodePage</name>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="49"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="51"/>
         <source>the name field cannot be empty!</source>
         <translation>Поле имени не может быть пустым!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="53"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="55"/>
         <source>the code field cannot be empty!</source>
         <translation>Поле кода не может быть пустым!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="60"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="62"/>
         <source>Could not add barcode!</source>
         <translation>Не удалось добавить штрих-код!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="63"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="65"/>
         <source>barcode successfully added!</source>
         <translation>Штрих-код успешно добавлен!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="72"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="74"/>
         <source>Add card</source>
-        <translation>Добавить карту</translation>
+        <translation>Добавление карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="87"/>
-        <source>Scan</source>
-        <translation>Сканировать</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="109"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="93"/>
         <source>Barcode type</source>
         <translation>Тип штрих-кода</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="139"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="119"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="151"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="131"/>
         <source>Additionally</source>
         <translation>Дополнительная информация о карте</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="162"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="145"/>
         <source>Code</source>
         <translation>Код</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AddBarcodePage.qml" line="179"/>
+        <location filename="../qml/pages/AddBarcodePage.qml" line="182"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
@@ -229,7 +224,7 @@
     <message>
         <location filename="../qml/pages/EditBarcodePage.qml" line="221"/>
         <source>Additionally</source>
-        <translation type="unfinished">Дополниьельная информация о карте</translation>
+        <translation>Дополнительная информация о карте</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditBarcodePage.qml" line="230"/>

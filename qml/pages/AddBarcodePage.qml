@@ -1,6 +1,8 @@
 import QtQuick 2.5
 import Sailfish.Silica 1.0
 import Nemo.Notifications 1.0
+import Aurora.Controls 1.0
+
 import "../db.js" as DB
 
 Page {
@@ -68,33 +70,15 @@ Page {
     }
 
     PageHeader {
-        objectName: "pageHeader"
-        title: qsTr("Add card")
-    }
-
+           objectName: "pageHeader"
+           title: qsTr("Add card")
+       }
 
     SilicaFlickable {
         anchors.fill: parent
         contentWidth: parent.width
-        //        contentHeight: col.height
         anchors.topMargin: 90
         clip: true
-
-
-
-        PullDownMenu {
-            MenuItem {
-                text: qsTr("Scan")
-                onClicked: {
-                    pageStack.replace(Qt.resolvedUrl("../pages/ScanBarcodePage.qml"),{
-                                          "type": type,
-                                          "barcode_name" : barcode_name,
-                                          "barcode_type" : barcode_type,
-                                          "barcode_icon" : barcode_icon
-                                      })
-                }
-            }
-        }
 
         ScrollDecorator {}
 
@@ -125,14 +109,10 @@ Page {
                 width: 120
                 height: 80
                 anchors.leftMargin: 20
+                anchors.topMargin: 40
                 anchors.horizontalCenter: parent.horizontalCenter
             }
-            Separator {
-                color: Theme.primaryColor
-                width: parent.width
-                anchors.horizontalCenter: parent.horizontalCenter
-                horizontalAlignment: Qt.AlignHCenter
-            }
+
             TextField {
                 id: name
                 //focus: true
@@ -156,14 +136,35 @@ Page {
                 EnterKey.onClicked: code.focus = true
             }
 
-            TextField {
-                id: code
-                text: codeValue
-                placeholderText: qsTr("Code")
-                label: placeholderText
-                width: parent.width
-                EnterKey.onClicked: accept()
+
+            Row {
+                id: rowCode
+                TextField {
+                    id: code
+                    text: codeValue
+                    placeholderText: qsTr("Code")
+                    label: placeholderText
+                    width: parent.width*0.85
+                    EnterKey.onClicked: accept()
+                }
+
+                IconButton {
+                    icon.source: "image://theme/icon-cover-camera?" + (pressed
+                                                                   ? Theme.highlightColor
+                                                                   : Theme.primaryColor)
+                    icon.width: 50
+                    icon.height: 50
+                    onClicked: {
+                        pageStack.replace(Qt.resolvedUrl("../pages/ScanBarcodePage.qml"),{
+                                              "type": type,
+                                              "barcode_name" : barcode_name,
+                                              "barcode_type" : barcode_type,
+                                              "barcode_icon" : barcode_icon
+                                          })
+                    }
+                }
             }
+
 
             Separator {
                 color: Theme.primaryColor
@@ -176,6 +177,8 @@ Page {
                 id: saveButton
                 width: parent.width * 0.8
                 anchors.horizontalCenter: parent.horizontalCenter
+               // anchors.top: rowCode.bottom
+               // anchors.topMargin: 80
                 text: qsTr("Save")
                 onClicked: saveCard()
             }

@@ -63,7 +63,6 @@ Page {
             }
         }
 
-
         Separator {
            id: separator
             anchors.top: iconImageGrid.bottom
@@ -85,6 +84,7 @@ Page {
             width: parent.width * 0.8
             height: 300
         }
+
         Separator {
            id: separator2
             anchors.top: qrImage.bottom

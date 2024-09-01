@@ -341,7 +341,7 @@ Page {
                     sendData(barcode_id,
                              name.text.trim(),
                              barcodetype.currentItem.text,
-                             '',
+                             description.text.trim(),
                              code.text.trim())
                 }
             }

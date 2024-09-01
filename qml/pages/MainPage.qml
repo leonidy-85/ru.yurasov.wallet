@@ -69,32 +69,31 @@ Page {
         anchors.fill: parent
         anchors.topMargin: 120
 
+
+        TextField {
+            id: searchField
+            placeholderText:qsTr("Search...")
+            focus: mainapp.search ? true : false
+            width: parent.width*0.9
+            visible : mainapp.search
+            onTextChanged: {
+                barcodeList.model.clear()
+                //barcodeList.anchors.topMargin=150
+                var searchTerm = "%" + text + "%";
+                DB.readBarcodes(searchTerm)
+            }
+        }
+
+
         SilicaFlickable {
             width: parent.width
             height: barcodeFavorits.count<4 ? 280 : 450
             visible: barcodeFavorits.count>0
 
-
-            TextField {
-                id: searchField
-                placeholderText:qsTr("Search...")
-                focus: mainapp.search ? true : false
-                width: parent.width*0.8
-                visible : mainapp.search
-                onTextChanged: {
-                    barcodeList.model.clear()
-                    barcodeList.anchors.topMargin=150
-                    var searchTerm = "%" + text + "%";
-                    DB.readBarcodes(searchTerm)
-                }
-            }
-
-
             SectionHeader {
                 text: qsTr("Favorits")
                 visible : !mainapp.search
                 font.pixelSize: Theme.fontSizeMedium
-                // visible: isPortrait || (largeScreen && Screen.width > 1080)
             }
             SilicaGridView {
                 id: barcodeFavorits
@@ -103,7 +102,7 @@ Page {
                 anchors.fill: parent
                 leftMargin: Theme.horizontalPageMargin
                 rightMargin: Theme.horizontalPageMargin
-                anchors.topMargin: 120
+                anchors.topMargin: !mainapp.search ? 120 : 20
                 anchors.leftMargin: parent.width  * 0.033
                 model: ListModel {}
                 delegate: ListItem {
@@ -211,7 +210,6 @@ Page {
                 }
             }
         }
-
 
         Separator {
             color: Theme.primaryColor

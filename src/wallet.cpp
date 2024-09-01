@@ -17,6 +17,8 @@
 #include "barcodeimageprovider.h"
 #include "imageconverter.h"
 
+
+
 //#include "zipfileimageprovider.h"
 
 
@@ -24,7 +26,7 @@
 #include "qmlimage.h"
 #include "ImageProcessor.h"
 #include "resizeimage.h"
-
+#include "ColorGenerator.h"
 
 using namespace Aurora;
 
@@ -53,6 +55,10 @@ int main(int argc, char *argv[])
     qmlRegisterType<QmlImage>("ru.yurasov.wallet.QmlImage", 1, 0, "QmlImage");
     qmlRegisterType<ImageProcessor>("ru.yurasov.wallet.imageProcessor", 1, 0, "ImageProcessor");
     qmlRegisterType<resizeImage>("ru.yurasov.wallet.resizeImage", 1, 0, "ResizeImage");
+    qmlRegisterType<MyColor>("ru.yurasov.wallet.customColor", 1, 0, "MyColor");
+    qmlRegisterType<ColorGenerator>("ru.yurasov.wallet.colorGenerator", 1, 0, "ColorGenerator");
+
+
     QGuiApplication* app = Application::application(argc, argv);
 
     QLocale::setDefault(QLocale::c());

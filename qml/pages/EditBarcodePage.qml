@@ -172,12 +172,12 @@ Page {
 
 
             PullDownMenu {
-              MenuItem {
-                text: qsTr("Тake photo")
-                onClicked: {
-                  pageStack.push(Qt.resolvedUrl("../pages/TakePhotoPage.qml"))
+                MenuItem {
+                    text: qsTr("Тake photo")
+                    onClicked: {
+                        pageStack.push(Qt.resolvedUrl("../pages/TakePhotoPage.qml"))
+                    }
                 }
-              }
             }
 
             PageHeader {
@@ -216,15 +216,15 @@ Page {
                 EnterKey.enabled: !errorHighlight
                 onErrorHighlightChanged: { save.enabled = !errorHighlight }
             }
-            //            TextField {
-            //                id: description
-            //                placeholderText: qsTr("Description")
-            //                label: placeholderText
-            //                width: parent.width
-            //                text: barcode_description
-            //                EnterKey.iconSource: "image://theme/icon-m-enter-next"
-            //                EnterKey.onClicked: code.focus = true
-            //            }
+            TextField {
+                id: description
+                placeholderText: qsTr("Additionally")
+                label: placeholderText
+                width: parent.width
+                text: barcode_description
+                EnterKey.iconSource: "image://theme/icon-m-enter-next"
+                EnterKey.onClicked: code.focus = true
+            }
             TextField {
                 id: code
                 placeholderText: qsTr("Code")
@@ -269,29 +269,29 @@ Page {
                                         Theme.itemSizeSmall)
                     height: 50
                     anchors.verticalCenter: parent.verticalCenter
-                 }
                 }
+            }
 
-//            Row {
-//                IconButton {
-//                    id: buttonIcon
-//                    icon.source: "image://theme/icon-cover-camera?" + (pressed
-//                                 ? Theme.highlightColor
-//                                 : Theme.primaryColor)
-//                    visible: barcode_icon === "" &&  fileName.text===""
-//                    onClicked:   pageStack.push(Qt.resolvedUrl("TakePhotoPage.qml"))
-//                }
+            //            Row {
+            //                IconButton {
+            //                    id: buttonIcon
+            //                    icon.source: "image://theme/icon-cover-camera?" + (pressed
+            //                                 ? Theme.highlightColor
+            //                                 : Theme.primaryColor)
+            //                    visible: barcode_icon === "" &&  fileName.text===""
+            //                    onClicked:   pageStack.push(Qt.resolvedUrl("TakePhotoPage.qml"))
+            //                }
 
-//                Label{
-//                    id: labelIcon
-//                    text: qsTr("Press icon take photo")
-//                    verticalAlignment: Text.AlignVCenter
-//                    anchors.verticalCenter: buttonIcon.verticalCenter
-//                    font.pixelSize: Theme.fontSizeMedium
-//                    visible: barcode_icon === "" &&  fileName.text===""
-//                    color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-//                }
-//            }
+            //                Label{
+            //                    id: labelIcon
+            //                    text: qsTr("Press icon take photo")
+            //                    verticalAlignment: Text.AlignVCenter
+            //                    anchors.verticalCenter: buttonIcon.verticalCenter
+            //                    font.pixelSize: Theme.fontSizeMedium
+            //                    visible: barcode_icon === "" &&  fileName.text===""
+            //                    color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+            //                }
+            //            }
 
 
 

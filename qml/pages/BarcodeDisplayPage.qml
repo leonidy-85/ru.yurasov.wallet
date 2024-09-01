@@ -104,9 +104,9 @@ Page {
             elide: Text.ElideRight
             anchors.top: separator2.bottom
             anchors.topMargin: 40
-            anchors.horizontalCenter: parent.horizontalCenter  // Центрируем по горизонтали
-            anchors.leftMargin: 0  // Убираем отступ слева
-            anchors.rightMargin: 0  // Убираем отступ справа
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.leftMargin: 0
+            anchors.rightMargin: 0
         }
         Label {
             id: qRText
@@ -117,7 +117,37 @@ Page {
             elide: Text.ElideRight
             anchors.top: qRLabel.bottom
             anchors.topMargin: 40
-            anchors.horizontalCenter: parent.horizontalCenter  // Центрируем по горизонтали
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.leftMargin: 0
+            anchors.rightMargin: 0
+        }
+
+
+        Label {
+            id: addLabel
+            text: barcode_description
+            height: 40
+            font.pixelSize: Theme.fontSizeExtraLargeBase
+            color: Theme.primaryColor
+            elide: Text.ElideRight
+            anchors.top: qRText.bottom
+            visible: barcode_description!=''
+            anchors.topMargin: 40
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.leftMargin: 0
+            anchors.rightMargin: 0
+        }
+        Label {
+            id: addText
+            text: qsTr("Additionall field")
+            height: 20
+            font.pixelSize: Theme.fontSizeSmallBase
+            color: Theme.highlightColor
+            elide: Text.ElideRight
+            visible: barcode_description!=''
+            anchors.top: addLabel.bottom
+            anchors.topMargin: 40
+            anchors.horizontalCenter: parent.horizontalCenter
             anchors.leftMargin: 0
             anchors.rightMargin: 0
         }

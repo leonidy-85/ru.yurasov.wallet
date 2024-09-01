@@ -22,6 +22,7 @@ SOURCES += src/wallet.cpp \
         src/resizeimage.cpp
 
 HEADERS += \
+    src/ColorGenerator.h \
     src/ImageProcessor.h \
     src/barcodeimageprovider.h \
     src/imageconverter.h \
@@ -59,8 +60,9 @@ DISTFILES += qml/wallet.qml \
     qml/cover/cover_background.png \
     rpm/ru.yurasov.wallet.changes.in \
     rpm/ru.yurasov.wallet.spec \
-    README.md\
-    qml/db.js
+    qml/logo.js \
+    qml/db.js \
+    README.md
 
 AURORAAPP_ICONS = 86x86 108x108 128x128 172x172
 

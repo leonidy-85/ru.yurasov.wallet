@@ -33,7 +33,17 @@ import "../db.js" as DB
                        }
                       }
                }
+            IconButton {
+                   icon.source: "image://theme/icon-m-add?" + (pressed
+                                ? Theme.highlightColor
+                                : Theme.primaryColor)
+                   icon.width: 50
+                   icon.height: 50
+                   onClicked: {
+                       onClicked: pageStack.push(Qt.resolvedUrl("../pages/WizardPage.qml"))
 
+                      }
+               }
 
                 AppBarButton {
                   id: appBarMenuButton
@@ -53,13 +63,12 @@ import "../db.js" as DB
                               onClicked: pageStack.push(Qt.resolvedUrl("../pages/Settings.qml"))
                           }
 
-
-                          PopupMenuItem {
-                              text: qsTr("Add code")
-//                              onClicked: pageStack.push(Qt.resolvedUrl("../pages/AddBarcodePage.qml"))
-                            //  onClicked: pageStack.push(Qt.resolvedUrl("../pages/ScanBarcodePage.qml"))
-                              onClicked: pageStack.push(Qt.resolvedUrl("../pages/WizardPage.qml"))
-                          }
+//                          PopupMenuItem {
+//                              text: qsTr("Add code")
+////                              onClicked: pageStack.push(Qt.resolvedUrl("../pages/AddBarcodePage.qml"))
+//                            //  onClicked: pageStack.push(Qt.resolvedUrl("../pages/ScanBarcodePage.qml"))
+//                              onClicked: pageStack.push(Qt.resolvedUrl("../pages/WizardPage.qml"))
+//                          }
 
                   }
 

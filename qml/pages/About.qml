@@ -58,14 +58,6 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Qt.AlignHCenter
             }
-            SectionHeader {
-                text: qsTr("Author")
-            }
-
-            Label {
-                text: qsTr("© Leonid Yurasov ") +" "+ buildyear
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
 
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -96,15 +88,8 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Qt.AlignHCenter
             }
-            Label {
-                x: Theme.paddingLarge
-                color: Theme.primaryColor
-                font.pixelSize: Theme.fontSizeTiny
-                text: qsTr("Using ") + "<a href=\"https://github.com/zint/zint\">Zint</a>" + qsTr(
-                          " as backend")
-                linkColor: Theme.highlightColor
-                onLinkActivated: Qt.openUrlExternally(link)
-                anchors.horizontalCenter: parent.horizontalCenter
+            SectionHeader {
+                text: qsTr("Donate")
             }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -113,6 +98,99 @@ Page {
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.secondaryColor
+                text:  qsTr("Your help allows us to make this project better.")
+            }
+
+            Label {
+                id: ymoney
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                text: qsTr("If you like the app, you can donate to the author of the app via ")+ "<a href=\"https://forms.yandex.ru/u/66d272b8068ff021f89c2953/\">ЮMoney</a>"
+                linkColor: Theme.highlightColor
+
+
+            }
+
+            Label {
+                id: textBTC
+                horizontalAlignment: Text.AlignHCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2 * Theme.horizontalPageMargin
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                text: "BTC: 1BS637NuDU37T8tfAwVMr5xSDD9vfg1mwT"
+                MouseArea {
+                  anchors.fill: parent
+                    onClicked:{
+                        var textToCopy = textBTC.text.substring(4);
+                        Clipboard.text = textToCopy
+                        DB.banner('OK', qsTr("The address has been copied to the clipboard."))
+                    }
+                }
+            }
+
+
+            Label {
+                id: textTON
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+              // readOnly: true
+                text: "TON: UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3"
+                MouseArea {
+                  anchors.fill: parent
+                    onClicked:{
+                        var textToCopy = textTON.text.substring(4);
+                        Clipboard.text = textToCopy
+                        DB.banner('OK', qsTr("The address has been copied to the clipboard."))
+                    }
+                }
+            }
+
+
+            Separator {
+                color: Theme.primaryColor
+                width: parent.width
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Qt.AlignHCenter
+            }
+            SectionHeader {
+                text: qsTr("Author")
+            }
+
+            Label {
+                text: qsTr("© Leonid Yurasov ") +" "+ buildyear
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                text: qsTr("Using ") + "<a href=\"https://github.com/zint/zint\">Zint</a>" + qsTr(
+                          " as backend")
+                linkColor: Theme.highlightColor
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width - 2*Theme.horizontalPageMargin
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.secondaryColor
+                linkColor: Theme.highlightColor
                 text: qsTr("Based on ")+ "<a href=\"https://github.com/a-dekker/BarWal\">BarWal</a>"
             }
             Label {
@@ -139,80 +217,6 @@ Page {
                 width: parent.width
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Qt.AlignHCenter
-            }
-
-            SectionHeader {
-                text: qsTr("Donate")
-            }
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.secondaryColor
-                text:  qsTr("Your help allows us to make this project better.")
-            }
-
-            Label {
-                id: ymoney
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.secondaryColor
-                text: qsTr("If you like the app, you can donate to the author of the app via ")+ "<a href=\"https://forms.yandex.ru/u/66d272b8068ff021f89c2953/\">ЮMoney</a>"
-            }
-
-            TextArea {
-                id: textBTC
-                anchors.horizontalCenter: parent.horizontalCenter
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.secondaryColor
-                readOnly: true
-                anchors.margins: 0
-                text: "BTC: 1BS637NuDU37T8tfAwVMr5xSDD9vfg1mwT"
-                onClicked:{
-                    textBTC.select(4, textBTC.text.length);
-                    textBTC.copy()
-                    DB.banner('OK', qsTr("The address has been copied to the clipboard."))
-                }
-            }
-            TextArea {
-                id: textTON
-                anchors.horizontalCenter: parent.horizontalCenter
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.secondaryColor
-                readOnly: true
-                anchors.margins: 0
-                text: "TON: UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3"
-                onClicked:{
-                    textTON.select(4, textTON.text.length);
-                    textTON.copy()
-                    DB.banner('OK', qsTr("The address has been copied to the clipboard."))
-                }
-            }
-
-            TextArea {
-                id: textDOGS
-                anchors.horizontalCenter: parent.horizontalCenter
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.secondaryColor
-                readOnly: true
-                anchors.margins: 0
-                text: "DOGS: UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3"
-                onClicked:{
-                    textDOGS.select(4, textDOGS.text.length);
-                    textDOGS.copy()
-                    DB.banner('OK', qsTr("The address has been copied to the clipboard."))
-                }
             }
         }
     }

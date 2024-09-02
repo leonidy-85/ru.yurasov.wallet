@@ -16,9 +16,8 @@
 ## Пожертвования
 Если вам понравилось приложение, вы можете пожертвовать автору приложения через
  - [ЮMoney](https://forms.yandex.ru/u/66d272b8068ff021f89c2953/)
- - BTC 1BS637NuDU37T8tfAwVMr5xSDD9vfg1mwT
- - Ton UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3
- - DOGS UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3
+ - BTC: 1BS637NuDU37T8tfAwVMr5xSDD9vfg1mwT
+ - Ton\DOGS\NOT: UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3
  
 
 # Wallet
@@ -38,6 +37,5 @@ It uses [zint](https://github.com/zint/zint)  for generating the (bar)code image
 If you enjoyed the application, you can donate to the author of the original application via
 - [YMoney](https://forms.yandex.ru/u/66d272b8068ff021f89c2953/)
  - BTC 1BS637NuDU37T8tfAwVMr5xSDD9vfg1mwT
- - Ton UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3
- - DOGS UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3
+ - Ton\DOGS\NOT: UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3
 

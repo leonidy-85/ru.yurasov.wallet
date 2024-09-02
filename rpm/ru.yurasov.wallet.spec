@@ -5,7 +5,7 @@
 Name:       ru.yurasov.wallet
 Summary:    Your Barcode Manager for discount card
 Version:    1.2
-Release:    2
+Release:    3
 Group:      Qt/Qt
 License:    GPL
 URL:        https://github.com/leonidy-85/wallet

@@ -19,69 +19,68 @@
         <translation>Ваш кошелёк для дисконтных карт</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="62"/>
+        <location filename="../qml/pages/About.qml" line="166"/>
         <source>Author</source>
         <translation>Автор</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="66"/>
+        <location filename="../qml/pages/About.qml" line="170"/>
         <source>© Leonid Yurasov </source>
         <translation>Леонид Юрасов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="77"/>
+        <location filename="../qml/pages/About.qml" line="69"/>
         <source>Wallet is open source software licensed under the terms of the GNU General Public License.</source>
         <translation>Кошелек это программное обеспечение с открытым исходным кодом, лицензированное в соответствии с условиями GNU General Public License.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="86"/>
+        <location filename="../qml/pages/About.qml" line="78"/>
         <source>For suggestions, bugs, ideas or financial support visit </source>
         <translation>Для предложений, сообщений об ошибках, идей или финансовой поддержки посетите</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="103"/>
+        <location filename="../qml/pages/About.qml" line="181"/>
         <source>Using </source>
         <translation>Использует в качестве бэкэнда </translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="103"/>
+        <location filename="../qml/pages/About.qml" line="181"/>
         <source> as backend</source>
         <translation> для формирования QR</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="116"/>
+        <location filename="../qml/pages/About.qml" line="194"/>
         <source>Based on </source>
         <translation>По мотивам </translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="125"/>
+        <location filename="../qml/pages/About.qml" line="203"/>
         <source>Thanks to Arno Dekker for the idea and inspiration</source>
         <translation>спасибо Arno Dekker за идею и вдохновение</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="135"/>
+        <location filename="../qml/pages/About.qml" line="213"/>
         <source>Thanks to Alexander for the owner and the breakdown of the card number by 4 characters</source>
         <translation>Спасибо Alexander за валидатор и разбивку по 4 символа номера карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="145"/>
+        <location filename="../qml/pages/About.qml" line="92"/>
         <source>Donate</source>
         <translation>Поддержка</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="154"/>
+        <location filename="../qml/pages/About.qml" line="101"/>
         <source>Your help allows us to make this project better.</source>
         <translation>Ваша помощь, позволяет делать этот проект лучше</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="165"/>
+        <location filename="../qml/pages/About.qml" line="112"/>
         <source>If you like the app, you can donate to the author of the app via </source>
         <translation>Если вам понравилось приложение, вы можете пожертвовать автору приложения через </translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="181"/>
-        <location filename="../qml/pages/About.qml" line="197"/>
-        <location filename="../qml/pages/About.qml" line="214"/>
+        <location filename="../qml/pages/About.qml" line="132"/>
+        <location filename="../qml/pages/About.qml" line="153"/>
         <source>The address has been copied to the clipboard.</source>
         <translation>Адрес скопирован в буфер обмена</translation>
     </message>

@@ -111,8 +111,7 @@ Page {
                 color: Theme.secondaryColor
                 text: qsTr("If you like the app, you can donate to the author of the app via ")+ "<a href=\"https://forms.yandex.ru/u/66d272b8068ff021f89c2953/\">ЮMoney</a>"
                 linkColor: Theme.highlightColor
-
-
+                onLinkActivated: Qt.openUrlExternally(link)
             }
 
             Label {
@@ -192,6 +191,7 @@ Page {
                 color: Theme.secondaryColor
                 linkColor: Theme.highlightColor
                 text: qsTr("Based on ")+ "<a href=\"https://github.com/a-dekker/BarWal\">BarWal</a>"
+                onLinkActivated: Qt.openUrlExternally(link)
             }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter

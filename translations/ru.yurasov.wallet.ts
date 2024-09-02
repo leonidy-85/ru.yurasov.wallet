@@ -19,12 +19,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="166"/>
+        <location filename="../qml/pages/About.qml" line="165"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="170"/>
+        <location filename="../qml/pages/About.qml" line="169"/>
         <source>© Leonid Yurasov </source>
         <translation type="unfinished"></translation>
     </message>
@@ -39,17 +39,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="181"/>
+        <location filename="../qml/pages/About.qml" line="180"/>
         <source>Using </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="181"/>
+        <location filename="../qml/pages/About.qml" line="180"/>
         <source> as backend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="194"/>
+        <location filename="../qml/pages/About.qml" line="193"/>
         <source>Based on </source>
         <translation type="unfinished"></translation>
     </message>
@@ -79,8 +79,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="132"/>
-        <location filename="../qml/pages/About.qml" line="153"/>
+        <location filename="../qml/pages/About.qml" line="131"/>
+        <location filename="../qml/pages/About.qml" line="152"/>
         <source>The address has been copied to the clipboard.</source>
         <translation type="unfinished"></translation>
     </message>

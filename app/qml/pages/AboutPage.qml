@@ -256,9 +256,9 @@ Tabs.TabItem  {
                 text: qsTr("For suggestions, bugs, ideas or financial support visit ")
             }
             Button {
-                text: "GitHub"
+                text: "GitFlic"
                 anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: Qt.openUrlExternally("https://github.com/leonidy-85/ru.yurasov.wallet/tree/dev_5")
+                onClicked: Qt.openUrlExternally("https://gitflic.ru/project/ub3gad/wallet")
             }
             Separator {
                 color: Theme.primaryColor

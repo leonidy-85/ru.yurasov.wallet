@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=ru.yurasov.wallet
+Exec=ru.yurasov.wallet %f
+Categories=Utility;
+Name=Wallet
+Name[ru]=Кошелек
+MimeType=application/vnd.apple.pkpass
+X-Nemo-Single-Instance=yes
+
+[X-Application]
+Permissions=Pictures;Camera;Internet;UserDirs;Documents;Location
+OrganizationName=ru.yurasov
+ApplicationName=wallet
+#ExecDBus=/usr/bin/ru.yurasov.wallet  --dbus-launch
+
+[X-Aurora-Application]
+IconMode=Crop

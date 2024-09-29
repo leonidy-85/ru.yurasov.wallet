@@ -1,0 +1,741 @@
+{
+"AED": {
+"fractional": 2,
+"symbol": "\u062f.\u0625"
+},
+"AFN": {
+"fractional": 2,
+"symbol": "\u060b"
+},
+"ALL": {
+"fractional": 2,
+"mark": ",",
+"symbol": "L"
+},
+"AMD": {
+"fractional": 2,
+"mark": ",",
+"symbol": "d."
+},
+"ANG": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u0192"
+},
+"AOA": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Kz"
+},
+"ARS": {
+"fractional": 2,
+"mark": ",",
+"symbol": "$"
+},
+"AUD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"AWG": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u0192"
+},
+"AZN": {
+"fractional": 2,
+"mark": ",",
+"symbol": "A.M."
+},
+"BAM": {
+"fractional": 2,
+"mark": ",",
+"symbol": "KM"
+},
+"BBD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"BDT": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Tk."
+},
+"BGN": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u043b\u0432"
+},
+"BHD": {
+"fractional": 3,
+"symbol": ".\u062f.\u0628"
+},
+"BIF": {
+"fractional": 2,
+"symbol": "Fr"
+},
+"BMD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"BND": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"BOB": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Bs."
+},
+"BRL": {
+"fractional": 2,
+"mark": ",",
+"symbol": "R$"
+},
+"BSD": {
+"fractional": 2,
+"symbol": "$"
+},
+"BTN": {
+"fractional": 2,
+"symbol": "Nu."
+},
+"BWP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "P"
+},
+"BYR": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Br"
+},
+"BZD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"CAD": {
+"fractional": 2,
+"symbol": "$"
+},
+"CDF": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Fr"
+},
+"CHF": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Fr"
+},
+"CLP": {
+"fractional": 2,
+"mark": ",",
+"symbol": "$"
+},
+"CNY": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u00a5"
+},
+"COP": {
+"fractional": 2,
+"mark": ",",
+"symbol": "$"
+},
+"CRC": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u20a1"
+},
+"CUC": {
+"fractional": 2,
+"mark": ",",
+"symbol": "$"
+},
+"CUP": {
+"fractional": 2,
+"symbol": "$"
+},
+"CVE": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Esc"
+},
+"CZK": {
+"fractional": 2,
+"mark": ",",
+"symbol": "K\u010d"
+},
+"DJF": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Fr"
+},
+"DKK": {
+"fractional": 2,
+"mark": ",",
+"symbol": "kr"
+},
+"DOP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"DZD": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u062f.\u062c"
+},
+"EGP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u00a3"
+},
+"ERN": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Nfk"
+},
+"ETB": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Br"
+},
+"EUR": {
+"fractional": 2,
+"symbol": "\u20ac"
+},
+"FJD": {
+"fractional": 2,
+"symbol": "$"
+},
+"FKP": {
+"fractional": 2,
+"symbol": "\u00a3"
+},
+"GBP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u00a3"
+},
+"GGP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u00a3"
+},
+"GHS": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u20b5"
+},
+"GIP": {
+"fractional": 2,
+"symbol": "\u00a3"
+},
+"GMD": {
+"fractional": 2,
+"symbol": "D"
+},
+"GNF": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Fr"
+},
+"GTQ": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Q"
+},
+"GYD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"HKD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"HNL": {
+"fractional": 2,
+"mark": ".",
+"symbol": "L"
+},
+"HRK": {
+"fractional": 2,
+"mark": ",",
+"symbol": "kn"
+},
+"HTG": {
+"fractional": 2,
+"symbol": "G"
+},
+"HUF": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Ft"
+},
+"IDR": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Rp"
+},
+"ILS": {
+"fractional": 2,
+"mark": ".",
+"symbol": "NIS"
+},
+"IMP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u00a3"
+},
+"INR": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u20b9"
+},
+"IQD": {
+"fractional": 3,
+"symbol": "\u0639.\u062f"
+},
+"IRR": {
+"fractional": 2,
+"symbol": "\ufdfc"
+},
+"ISK": {
+"fractional": 2,
+"mark": ",",
+"symbol": "kr"
+},
+"JEP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u00a3"
+},
+"JMD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"JOD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u062f.\u0627"
+},
+"JPY": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u00a5"
+},
+"KES": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Sh"
+},
+"KGS": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u043b\u0432"
+},
+"KHR": {
+"fractional": 2,
+"mark": ",",
+"symbol": "CR"
+},
+"KMF": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Fr"
+},
+"KPW": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u20a9"
+},
+"KRW": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u20a9"
+},
+"KWD": {
+"fractional": 3,
+"symbol": "\u062f.\u0643"
+},
+"KYD": {
+"fractional": 2,
+"symbol": "$"
+},
+"LBP": {
+"fractional": 2,
+"symbol": "\u0644.\u0644"
+},
+"LKR": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Rs"
+},
+"LRD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"LSL": {
+"fractional": 2,
+"symbol": "L"
+},
+"LYD": {
+"fractional": 3,
+"symbol": "\u0644.\u062f"
+},
+"MAD": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u062f.\u0645."
+},
+"MDL": {
+"fractional": 2,
+"mark": ",",
+"symbol": "L"
+},
+"MGA": {
+"fractional": 1,
+"symbol": "Ar"
+},
+"MKD": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u0434\u0435\u043d"
+},
+"MMK": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Ks"
+},
+"MOP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "P"
+},
+"MRO": {
+"fractional": 1,
+"symbol": "UM"
+},
+"MUR": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Rs"
+},
+"MVR": {
+"fractional": 2,
+"symbol": "Rf"
+},
+"MWK": {
+"fractional": 2,
+"symbol": "MK"
+},
+"MXN": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"MYR": {
+"fractional": 2,
+"mark": ".",
+"symbol": "RM"
+},
+"MZN": {
+"fractional": 2,
+"mark": ",",
+"symbol": "MT"
+},
+"NAD": {
+"fractional": 2,
+"mark": ",",
+"symbol": "$"
+},
+"NGN": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u20a6"
+},
+"NIO": {
+"fractional": 2,
+"mark": ".",
+"symbol": "C$"
+},
+"NOK": {
+"fractional": 2,
+"mark": ",",
+"symbol": "kr"
+},
+"NPR": {
+"fractional": 2,
+"mark": ".",
+"symbol": "NRs"
+},
+"NZD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"OMR": {
+"fractional": 3,
+"symbol": "\u0631.\u0639."
+},
+"PAB": {
+"fractional": 2,
+"mark": ".",
+"symbol": "B/."
+},
+"PEN": {
+"fractional": 2,
+"mark": ",",
+"symbol": "S/."
+},
+"PGK": {
+"fractional": 2,
+"symbol": "K"
+},
+"PHP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u20b1"
+},
+"PKR": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Rs."
+},
+"PLN": {
+"fractional": 2,
+"mark": ",",
+"symbol": "z\u0142"
+},
+"PRB": {
+"fractional": 2,
+"symbol": "\u0440."
+},
+"PYG": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u20b2"
+},
+"QAR": {
+"fractional": 2,
+"symbol": "\u0631.\u0642"
+},
+"RON": {
+"fractional": 2,
+"mark": ",",
+"symbol": "lei"
+},
+"RSD": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u0434\u0438\u043d."
+},
+"RUB": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u0440\u0443\u0431."
+},
+"RWF": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Fr"
+},
+"SAR": {
+"fractional": 2,
+"symbol": "\u0631.\u0633"
+},
+"SBD": {
+"fractional": 2,
+"symbol": "$"
+},
+"SCR": {
+"fractional": 2,
+"symbol": "SR"
+},
+"SDG": {
+"fractional": 2,
+"symbol": "\u00a3"
+},
+"SEK": {
+"fractional": 2,
+"mark": ",",
+"symbol": "kr"
+},
+"SGD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"SHP": {
+"fractional": 2,
+"symbol": "\u00a3"
+},
+"SLL": {
+"fractional": 2,
+"symbol": "Le"
+},
+"SOS": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Sh"
+},
+"SRD": {
+"fractional": 2,
+"symbol": "$"
+},
+"SSP": {
+"fractional": 2,
+"symbol": "\u00a3"
+},
+"STD": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Db"
+},
+"SVC": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"SYP": {
+"fractional": 2,
+"symbol": "\u00a3"
+},
+"SZL": {
+"fractional": 2,
+"symbol": "L"
+},
+"THB": {
+"fractional": 2,
+"mark": ".",
+"symbol": "\u0e3f"
+},
+"TJS": {
+"fractional": 2,
+"symbol": "\u0405\u041c"
+},
+"TMT": {
+"fractional": 2,
+"symbol": "m"
+},
+"TND": {
+"fractional": 3,
+"mark": ",",
+"symbol": "\u062f.\u062a"
+},
+"TOP": {
+"fractional": 2,
+"mark": ".",
+"symbol": "T$"
+},
+"TRY": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u20ba"
+},
+"TTD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"TWD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"TZS": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Sh"
+},
+"UAH": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u0433\u0440\u043d"
+},
+"UGX": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Sh"
+},
+"USD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "$"
+},
+"UYU": {
+"fractional": 2,
+"mark": ",",
+"symbol": "$"
+},
+"UZS": {
+"fractional": 2,
+"mark": ",",
+"symbol": "\u043b\u0432"
+},
+"VEF": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Bs"
+},
+"VND": {
+"fractional": 1,
+"mark": ",",
+"symbol": "\u20ab"
+},
+"VUV": {
+"fractional": 0,
+"symbol": "Vt"
+},
+"WST": {
+"fractional": 2,
+"mark": ".",
+"symbol": "T"
+},
+"XAF": {
+"fractional": 2,
+"mark": ",",
+"symbol": "Fr"
+},
+"XCD": {
+"fractional": 2,
+"symbol": "$"
+},
+"XOF": {
+"fractional": 2,
+"symbol": "Fr"
+},
+"XPF": {
+"fractional": 2,
+"symbol": "Fr"
+},
+"YER": {
+"fractional": 2,
+"symbol": "\ufdfc"
+},
+"ZAR": {
+"fractional": 2,
+"mark": ",",
+"symbol": "R"
+},
+"ZMW": {
+"fractional": 2,
+"mark": ".",
+"symbol": "ZK"
+},
+"ZWD": {
+"fractional": 2,
+"mark": ".",
+"symbol": "Z$"
+}
+}

@@ -1,41 +1,50 @@
 # >> macros
 # << macros
 
+%define __provides_exclude_from ^%{_datadir}/%{name}/lib/.*$
+%define __requires_exclude ^libopencv.*$
 
 Name:       ru.yurasov.wallet
 Summary:    Your Barcode Manager for discount card
 Version:    1.2
-Release:    3
+Release:    6
 Group:      Qt/Qt
-License:    GPL
+License:    MIT/BSD
 URL:        https://github.com/leonidy-85/wallet
 Source0:    %{name}.%{version}.tar.bz2
 
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   qr-filter-qml-plugin
-BuildRequires:  libpng
-BuildRequires:  desktop-file-utils
-BuildRequires:  pkgconfig(Qt5DBus)
-#BuildRequires:  pkgconfig(liblzma)
-#BuildRequires:  bzip2-devel
+BuildRequires: libpng
+BuildRequires: desktop-file-utils
+BuildRequires: bzip2-devel
+BuildRequires: pkgconfig(protobuf)
+#BuildRequires: pkgconfig(liblzma)
+BuildRequires: pkgconfig(nemonotifications-qt5)
+BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5Multimedia)
+BuildRequires: pkgconfig(Qt5Qml)
+BuildRequires: pkgconfig(Qt5Quick)
+BuildRequires: pkgconfig(Qt5Concurrent)
+BuildRequires: pkgconfig(Qt5Gui)
+BuildRequires: pkgconfig(Qt5OpenGL)
+BuildRequires: pkgconfig(Qt5DBus)
+BuildRequires: cmake >= 2.6.3
 BuildRequires:  desktop-file-utils
 
 %description
 Your Barcode Manager for discount card, using zint as backend for (bar)codes
 
 %prep
-%setup -q -n %{name}-%{version}
-
-# >> setup
-# << setup
+%autosetup
 
 %build
-%qmake5
-%make_build
+%qmake5 -r OPENCV_MFLAGS=%{?_smp_mflags}
+make %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
-%qmake5_install
+%make_install
 
 %files
 %defattr(-,root,root,-)

@@ -129,8 +129,7 @@ DISTFILES += qml/wallet.qml \
     rpm/ru.yurasov.wallet.spec \
     qml/logo.js \
     qml/db.js \
-    qml/currencies.json \
-    pkpass/*.*
+    qml/currencies.json
 
 AURORAAPP_ICONS = 86x86 108x108 128x128 172x172
 

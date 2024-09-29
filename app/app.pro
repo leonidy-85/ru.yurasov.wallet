@@ -95,7 +95,7 @@ HEADERS += \
     src/scan/storage.h \
     src/scan/service.h \
     src/scan/types.h \
-    src/scan/zoomview.h \
+    src/scan/zoomview.h \Вроде
     src/pkpass/homewatcher.h \
     src/pkpass/settingsstore.h \
     src/pkpass/zint/gs1.h \

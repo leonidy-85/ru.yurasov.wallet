@@ -7,33 +7,28 @@ CONFIG += auroraapp_i18n
 
 LIBS += -lz
 LIBS += -lbz2
-LIBS += -llzma
+#LIBS += -llzma
 LIBS += -lnemonotifications-qt5
 LIBS += -lpng
-
 
 SUBDIRS = \
     libs \
 
 QT += multimedia core concurrent dbus sql positioning network
 
-
 DEFINES += \
     DBUS_SERVICE=\\\"ru.yurasov.wallet\\\" \
     DBUS_PATH=\\\"/ru/yurasov/wallet\\\" \
     DBUS_INTERFACE=\\\"ru.yurasov.wallet\\\" \
 
-
 INCLUDEPATH += \
     $$PWD/../libs/opencv/modules/core/include \
     $$PWD/../libs/opencv/modules/imgproc/include \
-#    $$PWD/../libs/opencv/modules/objdetect/include \
     $$OUT_PWD/../libs/opencv \
 
 DEPENDPATH += \
     $$PWD/../libs/opencv/modules/core/include \
     $$PWD/../libs/opencv/modules/imgproc/include \
-#    $$PWD/../libs/opencv/modules/objdetect/include \
     $$OUT_PWD/../libs/opencv \
 
 LIBS += \
@@ -41,7 +36,7 @@ LIBS += \
 
 
 
-    SOURCES += src/wallet.cpp \
+SOURCES += src/wallet.cpp \
             src/generator/barcodeimageprovider.cpp \
             src/camerahelper.cpp \
             src/qmlimage.cpp \
@@ -73,8 +68,7 @@ LIBS += \
             src/pkpass/passinfo.cpp \
             src/pkpass/notificator.cpp
 
-HEADERS += \
-    src/image/ColorGenerator.h \
+HEADERS += src/image/ColorGenerator.h \
     src/image/ImageProcessor.h \
     src/generator/barcodeimageprovider.h \
     src/image/imageconverter.h \
@@ -95,7 +89,7 @@ HEADERS += \
     src/scan/storage.h \
     src/scan/service.h \
     src/scan/types.h \
-    src/scan/zoomview.h \Вроде
+    src/scan/zoomview.h \
     src/pkpass/homewatcher.h \
     src/pkpass/settingsstore.h \
     src/pkpass/zint/gs1.h \
@@ -111,9 +105,11 @@ HEADERS += \
 
 DISTFILES += qml/wallet.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/*.* \
     qml/components/FancyPageHeader.qml \
     qml/components/AppBarMenu.qml \
+    qml/components/Coordinator.qml \
+    qml/components/BaseSplitViewCoordinator.qml \
+    qml/icons/icon.png \
     qml/icons/aztec-icon.png \
     qml/icons/barcode-icon.png \
     qml/icons/datamatrix-icon.png \
@@ -127,6 +123,7 @@ DISTFILES += qml/wallet.qml \
     qml/cover/cover_background.png \
     rpm/ru.yurasov.wallet.changes.in \
     rpm/ru.yurasov.wallet.spec \
+    qml/pages/*.* \
     qml/logo.js \
     qml/db.js \
     qml/currencies.json

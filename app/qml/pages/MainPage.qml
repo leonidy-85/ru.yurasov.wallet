@@ -5,7 +5,6 @@ import "../components"
 
 Page {
     id: tabMainPage
-    objectName: "mainPage"
     allowedOrientations: Orientation.All
 
     AppBarMenu {}
@@ -18,7 +17,7 @@ Page {
     Tabs.TabView {
         id: tabs
 
-        property var _viewModel: [walletPage, pkpassPage, aboutPage]
+        property var _viewModel: [splitViewPage, pkpassPage, aboutPage]
         width: parent.width
         height: tabMainPage.height
 
@@ -35,10 +34,15 @@ Page {
         }
 
         Component {
-            id: walletPage
-            WalletPage {
+            id: splitViewPage
+            SplitViewPage {
             }
         }
+//        Component {
+//            id: walletPage
+//            WalletPage {
+//            }
+//        }
 
         Component {
             id: pkpassPage

@@ -10,7 +10,7 @@ MimeType=application/vnd.apple.pkpass
 X-Nemo-Single-Instance=yes
 
 [X-Application]
-Permissions=Pictures;Camera;Internet;UserDirs;Documents;Location
+Permissions=Camera;Internet;UserDirs;Location
 OrganizationName=ru.yurasov
 ApplicationName=wallet
 #ExecDBus=/usr/bin/ru.yurasov.wallet  --dbus-launch

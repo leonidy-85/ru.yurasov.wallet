@@ -9,6 +9,14 @@ Tabs.TabItem  {
     id: mainPage
     property string document: ''
 
+    ShaderEffect {
+        anchors.fill: parent
+        blending: false
+        fragmentShader: "void main() { gl_FragColor = vec4(0.0); }"
+    }
+
+    signal pressedNext(QtObject element)
+
     function appendBarcode(id, name, type, description, code, zintcode, icon, sel) {
         barcodeList.model.append({
                                      "barcode_id": id,
@@ -24,13 +32,13 @@ Tabs.TabItem  {
     }
     function appendBarcodeFavorits(id, name, type, description, code, zintcode, icon) {
         barcodeFavorits.model.append({
-                                         "fav_barcode_id": id,
-                                         "fav_barcode_name": name,
-                                         "fav_barcode_type": type,
-                                         "fav_barcode_description": description,
-                                         "fav_barcode_code": code,
-                                         "fav_zint_code": zintcode,
-                                         "fav_barcode_icon": icon,
+                                         "barcode_id": id,
+                                         "barcode_name": name,
+                                         "barcode_type": type,
+                                         "barcode_description": description,
+                                         "barcode_code": code,
+                                         "zint_code": zintcode,
+                                         "barcode_icon": icon,
                                      })
     }
 
@@ -47,10 +55,10 @@ Tabs.TabItem  {
                 DB.readFavorites()
                 DB.readBarcodes()
                 mainapp.barcodeUpdate=false
+               // pressedNext(barcodeFavorits.model.get(0))
             }
         }
     }
-
 
     Component.onCompleted: {
         DB.initializeDB()
@@ -59,8 +67,7 @@ Tabs.TabItem  {
     Column {
         id: col_first
         anchors.fill: parent
-        anchors.topMargin: 120
-
+        anchors.topMargin: Theme.dp(100)
 
         TextField {
             id: searchField
@@ -75,10 +82,9 @@ Tabs.TabItem  {
             }
         }
 
-
         SilicaFlickable {
             width: parent.width
-            height: barcodeFavorits.count<4 ? 280 : 450
+            height: barcodeFavorits.count<4 ? Theme.dp(230) : Theme.dp(340)
             visible: barcodeFavorits.count>0 && !mainapp.search
 
             SectionHeader {
@@ -86,14 +92,16 @@ Tabs.TabItem  {
                 visible : !mainapp.search
                 font.pixelSize: Theme.fontSizeMedium
             }
+
             SilicaGridView {
                 id: barcodeFavorits
+                //cellWidth: width / 3
                 cellWidth: width / 3
-                cellHeight: 160
+                cellHeight: Theme.dp(120)
                 anchors.fill: parent
                 leftMargin: Theme.horizontalPageMargin
                 rightMargin: Theme.horizontalPageMargin
-                anchors.topMargin: !mainapp.search ? 120 : 20
+                anchors.topMargin: !mainapp.search ? Theme.dp(90) : Theme.dp(20)
                 anchors.leftMargin: parent.width  * 0.033
                 model: ListModel {}
                 delegate: ListItem {
@@ -105,9 +113,10 @@ Tabs.TabItem  {
                         color: "transparent"
                         Image {
                             id: imageElement
-                            source: fav_barcode_icon !== "" ?  fav_barcode_icon : "../icons/shablon.svg"
+                            source: barcode_icon !== "" ?  barcode_icon : "../icons/shablon.svg"
                             visible: false
-                            fillMode: Image.PreserveAspectCrop
+//                              height: Theme.dp(140)
+//                             fillMode: Image.PreserveAspectCrop
                             onStatusChanged: {
                                 if (status === Image.Ready) {
                                     canvas.requestPaint();
@@ -117,8 +126,9 @@ Tabs.TabItem  {
 
                         Canvas {
                             id: canvas
-                            height: 140
-                            width: parent.width
+                            height: Theme.dp(110)
+                             //width: parent.width
+                             width: Theme.dp(170)
                             onPaint: {
                                 var ctx = getContext("2d");
                                 ctx.clearRect(0, 0, width, height);
@@ -143,18 +153,21 @@ Tabs.TabItem  {
                                 anchors.fill: parent
                                 onPressAndHold: menu2.active ? menu2.hide() : menu2.open(gridItem)
                                 onClicked: {
-                                    pageStack.push(Qt.resolvedUrl("BarcodeDisplayPage.qml"), {
-                                                       "barcode_name":  barcodeFavorits.model.get(
-                                                                            index).fav_barcode_name,
-                                                       "zint_code":  barcodeFavorits.model.get(
-                                                                         index).fav_zint_code,
-                                                       "barcode_description":  barcodeFavorits.model.get(
-                                                                                   index).fav_barcode_description,
-                                                       "barcode_icon":  barcodeFavorits.model.get(
-                                                                            index).fav_barcode_icon,
-                                                       "barcode_code":  barcodeFavorits.model.get(
-                                                                            index).fav_barcode_code
-                                                   })
+
+                                  //GridView.view.currentIndex = index
+                                    pressedNext(barcodeFavorits.model.get(index) )
+//                                    pageStack.push(Qt.resolvedUrl("BarcodeDisplayPage.qml"), {
+//                                                       "barcode_name":  barcodeFavorits.model.get(
+//                                                                            index).fav_barcode_name,
+//                                                       "zint_code":  barcodeFavorits.model.get(
+//                                                                         index).fav_zint_code,
+//                                                       "barcode_description":  barcodeFavorits.model.get(
+//                                                                                   index).fav_barcode_description,
+//                                                       "barcode_icon":  barcodeFavorits.model.get(
+//                                                                            index).fav_barcode_icon,
+//                                                       "barcode_code":  barcodeFavorits.model.get(
+//                                                                            index).fav_barcode_code
+//                                                   })
                                 }
                             }
                         }
@@ -163,8 +176,8 @@ Tabs.TabItem  {
                     menu: ContextMenu {
                         id: menu2
                         MenuItem {
-                            text: qsTr("Remove ") +" "+ fav_barcode_name + qsTr(" from favorites")
-                            onClicked:  DB.changeFavorites(fav_barcode_id,0)
+                            text: qsTr("Remove ") +" "+ barcode_name + qsTr(" from favorites")
+                            onClicked:  DB.changeFavorites(barcode_id,0)
                         }
                     }
 
@@ -172,27 +185,27 @@ Tabs.TabItem  {
                     Item {
                         Image {
                             id: iconImageIcon
-                            source: DB.img_src(fav_barcode_icon, fav_zint_code, 1)
+                            source: DB.img_src(barcode_icon, zint_code, 1)
                             sourceSize: Qt.size(Theme.itemSizeSmall,
                                                 Theme.itemSizeSmall)
-                            width: 58
+                            width: Theme.dp(58)
                             fillMode: Image.PreserveAspectFit
                             anchors.left: parent.left
                             anchors.leftMargin: parent.width  * 0.33
-                            visible: fav_barcode_icon===""
+                            visible: barcode_icon===""
                             smooth: true
                         }
                         Label {
                             id: barcodeGrid
                             text: fav_barcode_name
-                            height: 40
-                            visible: fav_barcode_icon===""
+                            height: Theme.dp(40)
+                            visible: barcode_icon===""
                             anchors.top: iconImageIcon.bottom
                             font.pixelSize: Theme.fontSizeSmall
                             color:  Theme.highlightDimmerColor
                             elide: Text.ElideRight
                             anchors.right: parent.right
-                            anchors.rightMargin: -190
+                            anchors.rightMargin: Theme.dp(-190)
                         }
 
                     }
@@ -211,7 +224,7 @@ Tabs.TabItem  {
 
         SilicaFlickable {
             width: parent.width
-            height:   barcodeFavorits.count>0 && !mainapp.search  ? barcodeFavorits.count>0 && barcodeFavorits.count<4 && !mainapp.search  ? 900 : 500 : 1000
+            height:   barcodeFavorits.count>0 && !mainapp.search  ? barcodeFavorits.count>0 && barcodeFavorits.count<4 && !mainapp.search  ? col_first.height-(barcodeFavorits.height/2) : col_first.height-(barcodeFavorits.height) : col_first.height-(barcodeFavorits.height/2)
 
             SectionHeader {
                 id: allLabel
@@ -220,13 +233,12 @@ Tabs.TabItem  {
             }
 
 
-
             SilicaListView {
                 id: barcodeList
                 anchors.fill: parent
                 leftMargin: Theme.horizontalPageMargin
                 rightMargin: Theme.horizontalPageMargin
-                anchors.topMargin: 90
+                anchors.topMargin: Theme.dp(90)
 
                 VerticalScrollDecorator {}
 
@@ -235,18 +247,18 @@ Tabs.TabItem  {
                     id: listItem
 
                     contentHeight: Theme.itemSizeSmall
-                    Item {
-                        anchors.verticalCenter: parent.verticalCenter
-                        height: Theme.itemSizeSmall
 
                         Row {
                             anchors.verticalCenter: parent.verticalCenter
-                            spacing: Theme.paddingMedium
+                            spacing: Theme.paddingSmall
+                            Item {
+                                anchors.verticalCenter: parent.verticalCenter
+                                height: Theme.itemSizeMedium
 
                             Rectangle {
                                 id: imgrad
-                                implicitWidth: 100
-                                implicitHeight: 80
+                                implicitWidth: Theme.dp(80)
+                                implicitHeight: Theme.dp(60)
                                 color: "transparent"
 
                                 Image {
@@ -263,8 +275,8 @@ Tabs.TabItem  {
 
                                 Canvas {
                                     id: canvas2
-                                    width: 100
-                                    height: 80
+                                    width: Theme.dp(80)
+                                    height: Theme.dp(60)
 
                                     onPaint: {
                                         var ctx = getContext("2d");
@@ -293,7 +305,14 @@ Tabs.TabItem  {
                                 id: barcode
                                 text: barcode_name
                                 verticalAlignment: Text.AlignVCenter
-                                anchors.verticalCenter: imgrad.verticalCenter
+                              //  anchors.verticalCenter: imgrad.verticalCenter
+                               //
+                                anchors {
+                                    left: imgrad.right
+                                    leftMargin: Theme.fontSizeMedium
+                                    verticalCenter:  imgrad.verticalCenter
+                                }
+
                                 font.pixelSize: Theme.fontSizeMedium
                                 color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
                             }
@@ -302,18 +321,8 @@ Tabs.TabItem  {
 
                     }
                     onClicked: {
-                        pageStack.push(Qt.resolvedUrl("BarcodeDisplayPage.qml"), {
-                                           "barcode_name":  barcodeList.model.get(
-                                                                index).barcode_name,
-                                           "zint_code":  barcodeList.model.get(
-                                                             index).zint_code,
-                                           "barcode_description":  barcodeList.model.get(
-                                                                       index).barcode_description,
-                                           "barcode_icon":  barcodeList.model.get(
-                                                                index).barcode_icon,
-                                           "barcode_code":  barcodeList.model.get(
-                                                                index).barcode_code
-                                       })
+                        ListView.view.currentIndex = index
+                        pressedNext(barcodeList.model.get(index))
                     }
 
                     onPressAndHold: menu.active ? menu.hide() : menu.open(listItem)

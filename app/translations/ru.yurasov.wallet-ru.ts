@@ -4,12 +4,12 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="38"/>
+        <location filename="../qml/pages/AboutPage.qml" line="37"/>
         <source>Wallet</source>
         <translation>Кошелёк</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="47"/>
+        <location filename="../qml/pages/AboutPage.qml" line="46"/>
         <source>Version</source>
         <translation>Версия</translation>
     </message>
@@ -19,12 +19,12 @@
         <translation>Ваш кошелёк для дисконтных карт</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="238"/>
+        <location filename="../qml/pages/AboutPage.qml" line="236"/>
         <source>Licensed</source>
         <translation>Лицензия</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="256"/>
+        <location filename="../qml/pages/AboutPage.qml" line="254"/>
         <source>For suggestions, bugs, ideas or financial support visit </source>
         <translation>Для предложений, сообщений об ошибках, идей или финансовой поддержки посетите</translation>
     </message>
@@ -34,7 +34,7 @@
         <translation>Поддержка</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="52"/>
+        <location filename="../qml/pages/AboutPage.qml" line="51"/>
         <source>Date Build</source>
         <translation>Дата сборки</translation>
     </message>
@@ -49,78 +49,67 @@
         <translation>Если вам понравилось приложение, вы можете пожертвовать автору приложения через </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="94"/>
-        <source> or </source>
-        <translation> или </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AboutPage.qml" line="113"/>
-        <location filename="../qml/pages/AboutPage.qml" line="133"/>
-        <source>The address has been copied to the clipboard.</source>
-        <translation>Адрес скопирован в буфер обмена</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AboutPage.qml" line="146"/>
+        <location filename="../qml/pages/AboutPage.qml" line="144"/>
         <source>Author</source>
         <translation>Автор</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="150"/>
+        <location filename="../qml/pages/AboutPage.qml" line="148"/>
         <source>© Leonid Yurasov </source>
         <translation>Леонид Юрасов</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="161"/>
+        <location filename="../qml/pages/AboutPage.qml" line="159"/>
         <source>Using </source>
         <translation>Использует в качестве бэкэнда </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="161"/>
+        <location filename="../qml/pages/AboutPage.qml" line="159"/>
         <source> as backend</source>
         <translation> для формирования QR</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="175"/>
+        <location filename="../qml/pages/AboutPage.qml" line="173"/>
         <source>Uses </source>
         <translation>Использует </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="175"/>
+        <location filename="../qml/pages/AboutPage.qml" line="173"/>
         <source> to get card covers</source>
         <translation> для получения обложек карт </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="186"/>
+        <location filename="../qml/pages/AboutPage.qml" line="184"/>
         <source>Based on </source>
         <translation>По мотивам </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="197"/>
+        <location filename="../qml/pages/AboutPage.qml" line="195"/>
         <source>pkpass format support is taken from </source>
         <translation>Поддержка формата pkpass взята из </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="217"/>
+        <location filename="../qml/pages/AboutPage.qml" line="215"/>
         <source>Thanks to </source>
         <translation>Спасибо </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="217"/>
+        <location filename="../qml/pages/AboutPage.qml" line="215"/>
         <source>Andrey Surganov</source>
         <translation>Андрею Сурганову</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="217"/>
+        <location filename="../qml/pages/AboutPage.qml" line="215"/>
         <source> for store cards for the card adding wizard</source>
         <translation> за карточки магазинов для мастера добавления карт</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="229"/>
+        <location filename="../qml/pages/AboutPage.qml" line="227"/>
         <source>Thanks to Alexander for the owner and the breakdown of the card number by 4 characters</source>
         <translation>Спасибо Alexander за валидатор и разбивку по 4 символа номера карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="247"/>
+        <location filename="../qml/pages/AboutPage.qml" line="245"/>
         <source>Wallet is open source software licensed under the terms of the MIT/BSD.</source>
         <translation>Кошелек это программное обеспечение с открытым исходным кодом, лицензированное в соответствии с условиями MIT/BSD</translation>
     </message>
@@ -181,17 +170,17 @@
 <context>
     <name>AppBarMenu</name>
     <message>
-        <location filename="../qml/components/AppBarMenu.qml" line="8"/>
+        <location filename="../qml/components/AppBarMenu.qml" line="13"/>
         <source>Wallet</source>
         <translation>Кошелёк</translation>
     </message>
     <message>
-        <location filename="../qml/components/AppBarMenu.qml" line="61"/>
+        <location filename="../qml/components/AppBarMenu.qml" line="51"/>
         <source>Backup</source>
         <translation>Импорт\Экспорт</translation>
     </message>
     <message>
-        <location filename="../qml/components/AppBarMenu.qml" line="65"/>
+        <location filename="../qml/components/AppBarMenu.qml" line="55"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
@@ -281,19 +270,14 @@
 <context>
     <name>BarcodeDisplayPage</name>
     <message>
-        <location filename="../qml/pages/BarcodeDisplayPage.qml" line="121"/>
+        <location filename="../qml/pages/BarcodeDisplayPage.qml" line="136"/>
         <source>Card number</source>
         <translation>Номер карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/BarcodeDisplayPage.qml" line="150"/>
+        <location filename="../qml/pages/BarcodeDisplayPage.qml" line="162"/>
         <source>Additionall field</source>
         <translation>Код</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/BarcodeDisplayPage.qml" line="166"/>
-        <source>Can&apos;t create QR-Code from an empty String</source>
-        <translation></translation>
     </message>
 </context>
 <context>
@@ -409,17 +393,17 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="80"/>
+        <location filename="../qml/pages/MainPage.qml" line="84"/>
         <source>Wallet</source>
         <translation>Кошелёк</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="85"/>
+        <location filename="../qml/pages/MainPage.qml" line="89"/>
         <source>Pkpass</source>
         <translation>Билеты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="91"/>
+        <location filename="../qml/pages/MainPage.qml" line="95"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
@@ -613,63 +597,63 @@
 <context>
     <name>WalletPage</name>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="67"/>
+        <location filename="../qml/pages/WalletPage.qml" line="74"/>
         <source>Search...</source>
         <translation>Поиск...</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="85"/>
+        <location filename="../qml/pages/WalletPage.qml" line="91"/>
         <source>Favorites</source>
         <translation>Избранное</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="166"/>
-        <location filename="../qml/pages/WalletPage.qml" line="349"/>
+        <location filename="../qml/pages/WalletPage.qml" line="179"/>
+        <location filename="../qml/pages/WalletPage.qml" line="358"/>
         <source>Remove </source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="166"/>
+        <location filename="../qml/pages/WalletPage.qml" line="179"/>
         <source> from favorites</source>
         <translation> из избранного</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="218"/>
+        <location filename="../qml/pages/WalletPage.qml" line="231"/>
         <source>All cards</source>
         <translation>Мои карты</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="325"/>
+        <location filename="../qml/pages/WalletPage.qml" line="334"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="344"/>
+        <location filename="../qml/pages/WalletPage.qml" line="353"/>
         <source>Add </source>
         <translation>Добавить </translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="344"/>
+        <location filename="../qml/pages/WalletPage.qml" line="353"/>
         <source> to favorites</source>
         <translation> в избранное</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="350"/>
+        <location filename="../qml/pages/WalletPage.qml" line="359"/>
         <source>Deleting </source>
         <translation>Удалить </translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="369"/>
+        <location filename="../qml/pages/WalletPage.qml" line="378"/>
         <source>No card with this name found</source>
         <translation>Такая карта не найдена</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="369"/>
+        <location filename="../qml/pages/WalletPage.qml" line="378"/>
         <source>No barcodes defined</source>
         <translation>Нет добавленных карт</translation>
     </message>
     <message>
-        <location filename="../qml/pages/WalletPage.qml" line="384"/>
+        <location filename="../qml/pages/WalletPage.qml" line="393"/>
         <source>Choose &quot;Add card&quot; from the menu or press of plus.</source>
         <translation>Выберите «Добавить карту» в меню или нажмите «плюс».</translation>
     </message>

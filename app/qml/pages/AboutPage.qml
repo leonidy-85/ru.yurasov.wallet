@@ -3,7 +3,6 @@ import Sailfish.Silica 1.0
 import Nemo.Notifications 1.0
 
 import "../db.js" as DB
-
 import "../tabview" as Tabs
 
 Tabs.TabItem  {
@@ -41,7 +40,7 @@ Tabs.TabItem  {
             }
             Image {
                 anchors.horizontalCenter: parent.horizontalCenter
-                source: isLandscape ? (largeScreen ? "/usr/share/icons/hicolor/176x176/apps/ru.yurasov.wallet.png" : "/usr/share/icons/hicolor/86x86/apps/ru.yurasov.wallet.png") : (largeScreen ? "/usr/share/icons/hicolor/172x172/apps/ru.yurasov.wallet.png" : "/usr/share/icons/hicolor/128x128/apps/ru.yurasov.wallet.png")
+                source: Qt.resolvedUrl("../icons/icon.png")
             }
             Label {
                 text: qsTr("Version") + " " + version
@@ -49,7 +48,8 @@ Tabs.TabItem  {
                 color: Theme.secondaryHighlightColor
             }
             Label {
-                text: qsTr("Date Build") + " " + formatCode(builddate)
+                text: qsTr("Date Build") + " 09-12-2024"
+               // text: qsTr("Date Build") + " " + formatCode(builddate)
                 font.pixelSize: Theme.fontSizeSmall
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: Theme.secondaryColor
@@ -91,50 +91,48 @@ Tabs.TabItem  {
                 wrapMode: Text.Wrap
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.secondaryColor
-                text: qsTr("If you like the app, you can donate to the author of the app via ")+ "<a href=\"https://forms.yandex.ru/u/66d272b8068ff021f89c2953/\">ЮMoney </a>" + qsTr(" or ")+ "<a href=\"https://boosty.to/ub3gad/donate\"> Boosty</a>"
+                text: qsTr("If you like the app, you can donate to the author of the app via ")+ "<a href=\"https://boosty.to/ub3gad/donate\"> Boosty</a>"
                 linkColor: Theme.highlightColor
                 onLinkActivated: Qt.openUrlExternally(link)
             }
+//            Label {
+//                id: textBTC
+//                horizontalAlignment: Text.AlignHCenter
+//                anchors.horizontalCenter: parent.horizontalCenter
+//                width: parent.width - 2 * Theme.horizontalPageMargin
+//                wrapMode: Text.Wrap
+//                font.pixelSize: Theme.fontSizeSmall
+//                color: Theme.secondaryColor
+//                text: "BTC: 1BS637NuDU37T8tfAwVMr5xSDD9vfg1mwT"
+//                MouseArea {
+//                  anchors.fill: parent
+//                    onClicked:{
+//                        var textToCopy = textBTC.text.substring(4);
+//                        Clipboard.text = textToCopy
+//                        DB.banner('OK', qsTr("The address has been copied to the clipboard."))
+//                    }
+//                }
+//            }
 
-            Label {
-                id: textBTC
-                horizontalAlignment: Text.AlignHCenter
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width - 2 * Theme.horizontalPageMargin
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.secondaryColor
-                text: "BTC: 1BS637NuDU37T8tfAwVMr5xSDD9vfg1mwT"
-                MouseArea {
-                  anchors.fill: parent
-                    onClicked:{
-                        var textToCopy = textBTC.text.substring(4);
-                        Clipboard.text = textToCopy
-                        DB.banner('OK', qsTr("The address has been copied to the clipboard."))
-                    }
-                }
-            }
-
-            Label {
-                id: textTON
-                anchors.horizontalCenter: parent.horizontalCenter
-                horizontalAlignment: Text.AlignHCenter
-                width: parent.width - 2*Theme.horizontalPageMargin
-                wrapMode: Text.Wrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.secondaryColor
-              // readOnly: true
-                text: "TON: UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3"
-                MouseArea {
-                  anchors.fill: parent
-                    onClicked:{
-                        var textToCopy = textTON.text.substring(4);
-                        Clipboard.text = textToCopy
-                        DB.banner('OK', qsTr("The address has been copied to the clipboard."))
-                    }
-                }
-            }
-
+//            Label {
+//                id: textTON
+//                anchors.horizontalCenter: parent.horizontalCenter
+//                horizontalAlignment: Text.AlignHCenter
+//                width: parent.width - 2*Theme.horizontalPageMargin
+//                wrapMode: Text.Wrap
+//                font.pixelSize: Theme.fontSizeSmall
+//                color: Theme.secondaryColor
+//              // readOnly: true
+//                text: "TON: UQA0lae0x_zHXTeBjL4MfxKT6173nQBzq0R5CMo5owLvsKn3"
+//                MouseArea {
+//                  anchors.fill: parent
+//                    onClicked:{
+//                        var textToCopy = textTON.text.substring(4);
+//                        Clipboard.text = textToCopy
+//                        DB.banner('OK', qsTr("The address has been copied to the clipboard."))
+//                    }
+//                }
+//            }
 
             Separator {
                 color: Theme.primaryColor

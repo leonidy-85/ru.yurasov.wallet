@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
 
     view->rootContext()->setContextProperty("homedir", homepath);
     view->rootContext()->setContextProperty("version", APP_VERSION);
-    view->rootContext()->setContextProperty("builddate", BUILD_DATE);
+   // view->rootContext()->setContextProperty("builddate", BUILD_DATE);
     view->rootContext()->setContextProperty("cameraHelper", &camera_helper);
 
 

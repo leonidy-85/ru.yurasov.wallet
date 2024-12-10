@@ -6,11 +6,11 @@
 
 Name:       ru.yurasov.wallet
 Summary:    Your Barcode Manager for discount card
-Version:    1.2
-Release:    6
+Version:    1.3
+Release:    2
 Group:      Qt/Qt
 License:    MIT/BSD
-URL:        https://github.com/leonidy-85/wallet
+URL:        https://gitflic.ru/project/ub3gad/wallet
 Source0:    %{name}.%{version}.tar.bz2
 
 Requires:   sailfishsilica-qt5 >= 0.10.9
